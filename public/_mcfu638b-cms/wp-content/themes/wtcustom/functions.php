@@ -119,9 +119,17 @@ function renderRegistrationPage() {
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Naam</th>
+                    <th>Volledige Naam</th>
+                    <th>Voornaam</th>
+                    <th>Achternaam</th>
+                    <th>Geboortedatum</th>
                     <th>E-mail</th>
+                    <th>Bedrijfsnaam</th>
+                    <th>Dieetwensen</th>
+                    <th>Partner?</th>
+                    <th>Naam partner</th>
+                    <th>Aantal kinderen</th>
+                    <th>Leeftijd kinderen</th>
                     <th>Aangemeld voor</th>
                 </tr>
             </thead>
@@ -131,10 +139,18 @@ function renderRegistrationPage() {
                         $page_title = get_the_title($row['page_id']);
                     ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['full_name']; ?></td>
+                        <td><?php echo $row['first_name']; ?></td>
+                        <td><?php echo $row['last_name']; ?></td>
+                        <td><?php echo $row['birth_date']; ?></td>
                         <td><?php echo $row['email']; ?></td>
-                        <td><?php echo ($page_title?$page_title:'-geen pagina gevonden-'); ?></td>
+                        <td><?php echo $row['company']; ?></td>
+                        <td><?php echo $row['diet_wishes']; ?></td>
+                        <td><?php echo $row['partner']; ?></td>
+                        <td><?php echo $row['partner_name']; ?></td>
+                        <td><?php echo $row['children_amount']; ?></td>
+                        <td><?php echo $row['children_ages']; ?></td>
+                        <td><?php echo ($page_title?$page_title:'- geen pagina gevonden, page_slug_at_registration: ' . $row['page_slug_at_registration'] . ' -'); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
