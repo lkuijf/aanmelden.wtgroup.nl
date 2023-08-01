@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->integer('page_id')->nullable()->default(null);
+            $table->string('page_slug_at_registration');
             $table->timestamps();
         });
     }

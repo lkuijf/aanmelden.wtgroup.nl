@@ -92,10 +92,21 @@ function renderRegistrationPage() {
     global $wpdb;
     $table_name = 'registrations';
     $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
-    
+    $pages = get_pages();
     ?>
     <div class="wrap">
-        <h1>Custom Table Page</h1>
+        <h1>Aanmeldingen</h1>
+        <form action="admin.php" method="GET">
+            <input type="hidden" name="page" value="custom-registration-page">
+            <select name="reg_page_id" id="">
+                <?php
+                    foreach($pages as $page) {
+                        echo '<option value="' . $page->ID . '">' . $page->post_title . '</option>';
+                    }
+                ?>
+            </select>
+            <button type="submit">Filteren</button>
+        </form>
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
