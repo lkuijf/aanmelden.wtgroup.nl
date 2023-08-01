@@ -116,6 +116,11 @@ function renderRegistrationPage() {
             </select>
             <button type="submit">Filteren</button>
         </form>
+        <p>
+            Totaal aantal aanmeldingen: <strong>45</strong><br>
+            Totaal aantal partners: <strong>12</strong><br>
+            Totaal aantal kinderen: <strong>5</strong>
+        </p>
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
