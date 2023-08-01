@@ -100,16 +100,21 @@ function renderRegistrationPage() {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
+                    <th>Naam</th>
+                    <th>E-mail</th>
+                    <th>Aangemeld voor</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($results as $row) : ?>
+                    <?php
+                        $page_title = get_the_title($row['page_id']);
+                    ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['email']; ?></td>
+                        <td><?php echo ($page_title?$page_title:'-geen pagina gevonden-'); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
