@@ -73,30 +73,71 @@ add_action('init', 'remove_editor_init'); // put this in comment when using a pl
 // add_action( 'init', 'register_taxonomy_vessel_type' );
 // add_action( 'init', 'register_taxonomy_case_category' );
 
-add_filter( 'manage_case_posts_columns', 'set_custom_case_columns' );
-add_action( 'manage_case_posts_custom_column' , 'custom_case_column', 10, 2 );
+// add_filter( 'manage_case_posts_columns', 'set_custom_case_columns' );
+// add_action( 'manage_case_posts_custom_column' , 'custom_case_column', 10, 2 );
 
 
-
-function set_custom_case_columns($columns) {
-    // unset( $columns['author'] );
-    $columns['highlighted_on_homepage'] = __( 'Highlighted', 'highlighted' );
-    // $columns['publisher'] = __( 'Publisher', 'your_text_domain' );
-    return $columns;
+function custom_registration_page() {
+    add_menu_page(
+        'Overzicht aanmeldingen',
+        'Aanmeldingen',
+        'manage_options',
+        'custom-registration-page',
+        'renderRegistrationPage'
+    );
 }
-function custom_case_column( $column, $post_id ) {
-    switch ( $column ) {
-        case 'highlighted_on_homepage' :
-            // $terms = get_the_term_list( $post_id , 'book_author' , '' , ',' , '' );
-            $highlighted = carbon_get_post_meta( $post_id, 'highlighted' );
-            // if ( is_string( $terms ) )
-                echo ($highlighted?'Yes':'');
-            // else
-                // _e( 'Unable to get author(s)', 'your_text_domain' );
-            break;
+add_action('admin_menu', 'custom_registration_page');
 
-    }
+function renderRegistrationPage() {
+    global $wpdb;
+    $table_name = 'registrations';
+    $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+    
+    ?>
+    <div class="wrap">
+        <h1>Custom Table Page</h1>
+        <table class="wp-list-table widefat fixed striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($results as $row) : ?>
+                    <tr>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php
 }
+
+
+// function set_custom_case_columns($columns) {
+//     // unset( $columns['author'] );
+//     $columns['highlighted_on_homepage'] = __( 'Highlighted', 'highlighted' );
+//     // $columns['publisher'] = __( 'Publisher', 'your_text_domain' );
+//     return $columns;
+// }
+// function custom_case_column( $column, $post_id ) {
+//     switch ( $column ) {
+//         case 'highlighted_on_homepage' :
+//             // $terms = get_the_term_list( $post_id , 'book_author' , '' , ',' , '' );
+//             $highlighted = carbon_get_post_meta( $post_id, 'highlighted' );
+//             // if ( is_string( $terms ) )
+//                 echo ($highlighted?'Yes':'');
+//             // else
+//                 // _e( 'Unable to get author(s)', 'your_text_domain' );
+//             break;
+
+//     }
+// }
 
 // Our custom post type function
 // function create_posttype_blog() {
