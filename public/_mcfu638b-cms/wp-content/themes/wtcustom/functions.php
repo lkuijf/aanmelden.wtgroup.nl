@@ -119,19 +119,19 @@ function renderRegistrationPage() {
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
-                    <th>Volledige Naam</th>
-                    <th>Voornaam</th>
-                    <th>Achternaam</th>
-                    <th>Geboortedatum</th>
-                    <th>E-mail</th>
-                    <th>Bedrijfsnaam</th>
-                    <th>Dieetwensen</th>
-                    <th>Partner?</th>
-                    <th>Naam partner</th>
-                    <th>Aantal kinderen</th>
-                    <th>Leeftijd kinderen</th>
-                    <th>Aangemeld voor</th>
-                    <th>Tijdstip aanmelding</th>
+                    <th style="font-size:11px">Volledige Naam</th>
+                    <th style="font-size:11px">Voornaam</th>
+                    <th style="font-size:11px">Achternaam</th>
+                    <th style="font-size:11px">Geboortedatum</th>
+                    <th style="font-size:11px">E-mail</th>
+                    <th style="font-size:11px">Bedrijfsnaam</th>
+                    <th style="font-size:11px">Dieetwensen</th>
+                    <th style="font-size:11px">Partner?</th>
+                    <th style="font-size:11px">Naam partner</th>
+                    <th style="font-size:11px">Aantal kinderen</th>
+                    <th style="font-size:11px">Leeftijd kinderen</th>
+                    <th style="font-size:11px">Aangemeld voor</th>
+                    <th style="font-size:11px">Tijdstip aanmelding</th>
                 </tr>
             </thead>
             <tbody>
