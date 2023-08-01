@@ -102,7 +102,8 @@ function renderRegistrationPage() {
     ?>
     <div class="wrap">
         <h1>Aanmeldingen</h1>
-        <form action="admin.php" method="GET">
+        <p>Een overzicht van alle aanmeldingen.</p>
+        <form action="admin.php" method="GET" style="display:inline-block;border:1px solid #CCC;padding:10px;">
             <input type="hidden" name="page" value="custom-registration-page">
             <select name="reg_page_id" id="">
                 <option value="">- Selecteer een pagina -</option>
