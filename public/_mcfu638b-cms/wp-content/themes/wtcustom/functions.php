@@ -91,11 +91,11 @@ add_action('admin_menu', 'custom_registration_page');
 function renderRegistrationPage() {
     global $wpdb;
     $table_name = 'registrations';
-    
+    $selectedRegistrationPageId = false;
     $pages = get_pages();
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
-        $registrationPageId = trim($_GET['reg_page_id']);
-        $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $registrationPageId", ARRAY_A);
+        $selectedRegistrationPageId = trim($_GET['reg_page_id']);
+        $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $selectedRegistrationPageId", ARRAY_A);
     } else {
         $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
     }
@@ -108,7 +108,9 @@ function renderRegistrationPage() {
                 <option value="">- Selecteer een pagina -</option>
                 <?php
                     foreach($pages as $page) {
-                        echo '<option value="' . $page->ID . '">' . $page->post_title . '</option>';
+                        $selected = '';
+                        if($selectedRegistrationPageId && $selectedRegistrationPageId == $page->ID) $selected = ' selected';
+                        echo '<option value="' . $page->ID . '"' . $selected . '>' . $page->post_title . '</option>';
                     }
                 ?>
             </select>
