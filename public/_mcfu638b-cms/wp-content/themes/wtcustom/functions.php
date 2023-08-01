@@ -91,14 +91,21 @@ add_action('admin_menu', 'custom_registration_page');
 function renderRegistrationPage() {
     global $wpdb;
     $table_name = 'registrations';
-    $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+    
     $pages = get_pages();
+    if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
+        $registrationPageId = trim($_GET['reg_page_id']);
+        $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $registrationPageId", ARRAY_A);
+    } else {
+        $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+    }
     ?>
     <div class="wrap">
         <h1>Aanmeldingen</h1>
         <form action="admin.php" method="GET">
             <input type="hidden" name="page" value="custom-registration-page">
             <select name="reg_page_id" id="">
+                <option value="">- Selecteer een pagina -</option>
                 <?php
                     foreach($pages as $page) {
                         echo '<option value="' . $page->ID . '">' . $page->post_title . '</option>';
