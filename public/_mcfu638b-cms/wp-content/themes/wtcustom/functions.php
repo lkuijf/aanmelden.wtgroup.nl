@@ -14,35 +14,35 @@ $editorCanAddAndRemovePosts = true; // !!! may take 2 reloads for changes to tak
 $carbonFieldsArgs = array();
 $websiteOptions = array();
 // $websiteOptions[] = array('text', 'header_big', 'Website kop tekst GROOT');
-$websiteOptions[] = array('separator', 'separator1', 'One-pager titel/omschrijving');
-$websiteOptions[] = array('text', 'meta_title', 'Homepage pagina titel (<title>)');
-$websiteOptions[] = array('text', 'meta_description', 'Homepage pagina omschrijving (<meta name="description">)');
-$websiteOptions[] = array('separator', 'separator2', 'Social Media Pakketten');
-$websiteOptions[] = array('separator', 'separator2_1', 'Pakket 1');
-$websiteOptions[] = array('text', 'package1_title', 'Pakket 1 titel');
-$websiteOptions[] = array('rich_text', 'package1_text', 'Pakket 1 tekst');
-$websiteOptions[] = array('text', 'package1_price', 'Pakket 1 prijs');
-$websiteOptions[] = array('text', 'package1_link', 'Pakket 1 link');
-$websiteOptions[] = array('separator', 'separator2_2', 'Pakket 2');
-$websiteOptions[] = array('text', 'package2_title', 'Pakket 2 titel');
-$websiteOptions[] = array('rich_text', 'package2_text', 'Pakket 2 tekst');
-$websiteOptions[] = array('text', 'package2_price', 'Pakket 2 prijs');
-$websiteOptions[] = array('text', 'package2_link', 'Pakket 2 link');
-$websiteOptions[] = array('separator', 'separator2_3', 'Pakket 3');
-$websiteOptions[] = array('text', 'package3_title', 'Pakket 3 titel');
-$websiteOptions[] = array('rich_text', 'package3_text', 'Pakket 3 tekst');
-$websiteOptions[] = array('text', 'package3_price', 'Pakket 3 prijs');
-$websiteOptions[] = array('text', 'package3_link', 'Pakket 3 link');
-$websiteOptions[] = array('separator', 'separator3', 'Global texts');
-$websiteOptions[] = array('text', 'subscribe_text', 'Aanmelden tekst');
+// $websiteOptions[] = array('separator', 'separator1', 'One-pager titel/omschrijving');
+// $websiteOptions[] = array('text', 'meta_title', 'Homepage pagina titel (<title>)');
+// $websiteOptions[] = array('text', 'meta_description', 'Homepage pagina omschrijving (<meta name="description">)');
+// $websiteOptions[] = array('separator', 'separator2', 'Social Media Pakketten');
+// $websiteOptions[] = array('separator', 'separator2_1', 'Pakket 1');
+// $websiteOptions[] = array('text', 'package1_title', 'Pakket 1 titel');
+// $websiteOptions[] = array('rich_text', 'package1_text', 'Pakket 1 tekst');
+// $websiteOptions[] = array('text', 'package1_price', 'Pakket 1 prijs');
+// $websiteOptions[] = array('text', 'package1_link', 'Pakket 1 link');
+// $websiteOptions[] = array('separator', 'separator2_2', 'Pakket 2');
+// $websiteOptions[] = array('text', 'package2_title', 'Pakket 2 titel');
+// $websiteOptions[] = array('rich_text', 'package2_text', 'Pakket 2 tekst');
+// $websiteOptions[] = array('text', 'package2_price', 'Pakket 2 prijs');
+// $websiteOptions[] = array('text', 'package2_link', 'Pakket 2 link');
+// $websiteOptions[] = array('separator', 'separator2_3', 'Pakket 3');
+// $websiteOptions[] = array('text', 'package3_title', 'Pakket 3 titel');
+// $websiteOptions[] = array('rich_text', 'package3_text', 'Pakket 3 tekst');
+// $websiteOptions[] = array('text', 'package3_price', 'Pakket 3 prijs');
+// $websiteOptions[] = array('text', 'package3_link', 'Pakket 3 link');
+// $websiteOptions[] = array('separator', 'separator3', 'Global texts');
+// $websiteOptions[] = array('text', 'subscribe_text', 'Aanmelden tekst');
 // $websiteOptions[] = array('text', 'facebook', 'Facebook link');
 // $websiteOptions[] = array('text', 'linkedin', 'LinkedIn link');
 // $websiteOptions[] = array('text', 'twitter', 'Twitter link');
 // $websiteOptions[] = array('text', 'instagram', 'Instagram link');
 // $websiteOptions[] = array('text', 'form_success', 'Contact formulier succes melding');
-$websiteOptions[] = array('separator', 'separator4', 'Form messages');
-$websiteOptions[] = array('text', 'form_subscription_success', 'Nieuwsbrief aanmeld formulier succes melding');
-$websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
+// $websiteOptions[] = array('separator', 'separator4', 'Form messages');
+// $websiteOptions[] = array('text', 'form_subscription_success', 'Nieuwsbrief aanmeld formulier succes melding');
+// $websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
 // $websiteOptions[] = array('text', 'apply_success', 'Sollicitatie succes melding');
 // $websiteOptions[] = array('text', 'apply_error', 'Sollicitatie error melding');
 // $websiteOptions[] = array('text', 'phone_number', 'Telefoonnummer (algemeen, o.a. gebruikt in "Call us"-box en header)');
@@ -54,24 +54,24 @@ $websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
 // $websiteOptions[] = array('rich_text', 'footer_tekst_2', 'Footer tekst rechts');
 // $websiteOptions[] = array('file', 'wt_algemene_voorwaarden', 'Algemene voorwaarden');
 // $websiteOptions[] = array('image', 'header_image', 'Header afbeelding');
-$websiteOptions[] = array('separator', 'separator5', 'Logo\'s en afbeeldingen');
-$websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
-$websiteOptions[] = array('separator', 'separator6', 'Statistieken');
-$websiteOptions[] = array('text', 'happy_clients', 'Tevreden klanten (web development dienstenpagina)');
-$websiteOptions[] = array('text', 'total_projects', 'Aantal projecten (web development dienstenpagina)');
+// $websiteOptions[] = array('separator', 'separator5', 'Logo\'s en afbeeldingen');
+// $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
+// $websiteOptions[] = array('separator', 'separator6', 'Statistieken');
+// $websiteOptions[] = array('text', 'happy_clients', 'Tevreden klanten (web development dienstenpagina)');
+// $websiteOptions[] = array('text', 'total_projects', 'Aantal projecten (web development dienstenpagina)');
 // $websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
 add_action('init', 'remove_editor_init'); // put this in comment when using a plugin, so the embed-code can be placed in the default editor (Default template)
 
-add_action( 'init', 'create_posttype_blog' );
-add_action( 'init', 'create_posttype_case' );
-add_action( 'init', 'create_posttype_review' );
-add_action( 'init', 'create_posttype_teammember' );
+// add_action( 'init', 'create_posttype_blog' );
+// add_action( 'init', 'create_posttype_case' );
+// add_action( 'init', 'create_posttype_review' );
+// add_action( 'init', 'create_posttype_teammember' );
 // add_action( 'init', 'create_posttype_professionals' );
 // add_action( 'init', 'create_posttype_vessels' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
-add_action( 'init', 'register_taxonomy_case_category' );
+// add_action( 'init', 'register_taxonomy_case_category' );
 
 add_filter( 'manage_case_posts_columns', 'set_custom_case_columns' );
 add_action( 'manage_case_posts_custom_column' , 'custom_case_column', 10, 2 );
@@ -99,86 +99,86 @@ function custom_case_column( $column, $post_id ) {
 }
 
 // Our custom post type function
-function create_posttype_blog() {
-    register_post_type( 'blog',
-        array(
-            'labels' => array(
-                'name' => __( 'Blog' ),
-                'singular_name' => __( 'Blog' ),
-                'add_new_item' => __( 'Add New Blog-item' ),
-                'add_new' => __( 'Add New Blog-item' ),
-                'edit_item' => __( 'Edit Blog-item' ),
-                'update_item' => __( 'Update Blog-item' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function create_posttype_case() {
-    register_post_type( 'case',
-        array(
-            'labels' => array(
-                'name' => __( 'Cases' ),
-                'singular_name' => __( 'Case' ),
-                'add_new_item' => __( 'Add New Case' ),
-                'add_new' => __( 'Add New Case' ),
-                'edit_item' => __( 'Edit Case' ),
-                'update_item' => __( 'Update Case' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function create_posttype_review() {
-    register_post_type( 'review',
-        array(
-            'labels' => array(
-                'name' => __( 'Reviews' ),
-                'singular_name' => __( 'Review' ),
-                'add_new_item' => __( 'Add New Review' ),
-                'add_new' => __( 'Add New Review' ),
-                'edit_item' => __( 'Edit Review' ),
-                'update_item' => __( 'Update Review' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function create_posttype_teammember() {
-    register_post_type( 'teammember',
-        array(
-            'labels' => array(
-                'name' => __( 'Team members' ),
-                'singular_name' => __( 'Team member' ),
-                'add_new_item' => __( 'Add New Team member' ),
-                'add_new' => __( 'Add New Team member' ),
-                'edit_item' => __( 'Edit Team member' ),
-                'update_item' => __( 'Update Team member' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
+// function create_posttype_blog() {
+//     register_post_type( 'blog',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Blog' ),
+//                 'singular_name' => __( 'Blog' ),
+//                 'add_new_item' => __( 'Add New Blog-item' ),
+//                 'add_new' => __( 'Add New Blog-item' ),
+//                 'edit_item' => __( 'Edit Blog-item' ),
+//                 'update_item' => __( 'Update Blog-item' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function create_posttype_case() {
+//     register_post_type( 'case',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Cases' ),
+//                 'singular_name' => __( 'Case' ),
+//                 'add_new_item' => __( 'Add New Case' ),
+//                 'add_new' => __( 'Add New Case' ),
+//                 'edit_item' => __( 'Edit Case' ),
+//                 'update_item' => __( 'Update Case' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function create_posttype_review() {
+//     register_post_type( 'review',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Reviews' ),
+//                 'singular_name' => __( 'Review' ),
+//                 'add_new_item' => __( 'Add New Review' ),
+//                 'add_new' => __( 'Add New Review' ),
+//                 'edit_item' => __( 'Edit Review' ),
+//                 'update_item' => __( 'Update Review' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function create_posttype_teammember() {
+//     register_post_type( 'teammember',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Team members' ),
+//                 'singular_name' => __( 'Team member' ),
+//                 'add_new_item' => __( 'Add New Team member' ),
+//                 'add_new' => __( 'Add New Team member' ),
+//                 'edit_item' => __( 'Edit Team member' ),
+//                 'update_item' => __( 'Update Team member' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
 // function create_posttype_offices() {
 //     register_post_type( 'office',
 //         array(
@@ -264,31 +264,31 @@ function create_posttype_teammember() {
 //     );
 //     register_taxonomy( 'vessel_type', [ 'vessel' ], $args );
 // }
-function register_taxonomy_case_category() {
-    $labels = array(
-        'name'              => _x( 'Categories', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Categories' ),
-        'all_items'         => __( 'All Categories' ),
-        'parent_item'       => __( 'Parent Category' ),
-        'parent_item_colon' => __( 'Parent Category:' ),
-        'edit_item'         => __( 'Edit Category' ),
-        'update_item'       => __( 'Update Category' ),
-        'add_new_item'      => __( 'Add New Category' ),
-        'new_item_name'     => __( 'New Category Name' ),
-        'menu_name'         => __( 'Category' ),
-    );
-    $args   = array(
-        'hierarchical'      => true, // make it hierarchical (like categories)
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'show_in_rest'      => true,
-        'query_var'         => true,
-        // 'rewrite'           => [ 'slug' => 'case_category' ],
-    );
-    register_taxonomy( 'case_category', [ 'case' ], $args );
-}
+// function register_taxonomy_case_category() {
+//     $labels = array(
+//         'name'              => _x( 'Categories', 'taxonomy general name' ),
+//         'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+//         'search_items'      => __( 'Search Categories' ),
+//         'all_items'         => __( 'All Categories' ),
+//         'parent_item'       => __( 'Parent Category' ),
+//         'parent_item_colon' => __( 'Parent Category:' ),
+//         'edit_item'         => __( 'Edit Category' ),
+//         'update_item'       => __( 'Update Category' ),
+//         'add_new_item'      => __( 'Add New Category' ),
+//         'new_item_name'     => __( 'New Category Name' ),
+//         'menu_name'         => __( 'Category' ),
+//     );
+//     $args   = array(
+//         'hierarchical'      => true, // make it hierarchical (like categories)
+//         'labels'            => $labels,
+//         'show_ui'           => true,
+//         'show_admin_column' => true,
+//         'show_in_rest'      => true,
+//         'query_var'         => true,
+//         // 'rewrite'           => [ 'slug' => 'case_category' ],
+//     );
+//     register_taxonomy( 'case_category', [ 'case' ], $args );
+// }
 
 $editor = get_role('editor');
 $capabilities_pages = array(
@@ -721,76 +721,76 @@ function crbRegisterFields($args) {
         ))
         ;
 
-    Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'blog' )
-        ->add_fields(array(
-            // Field::make( 'text', 'title', __( 'Title' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'image', 'small_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator1', __( 'Hero information' ) ),
-            Field::make( 'media_gallery', 'gallery', __( 'Hero images' ) )->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator2', __( 'Blog text' ) ),
-            Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
-            Field::make( 'text', 'page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'page_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
-            )
-        );
-    Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'case' )
-        ->add_fields(array(
-            // Field::make( 'separator', 'separator1', __( 'Images' ) ),
-            Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
-            // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator2', __( 'Case text' ) ),
-            Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
-            Field::make( 'text', 'page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'page_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
-            Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
-            )
-        );
-    Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'review' )
-        ->add_fields(array(
-            // Field::make( 'separator', 'separator1', __( 'Images' ) ),
-            Field::make( 'image', 'image', __( 'Image' ) ),
-            // Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
-            // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator2', __( 'Review text' ) ),
-            Field::make( 'text', 'leading_title', __( 'Leading title' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
-            // Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
-            // Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
-            )
-        );
-    Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'teammember' )
-        ->add_fields(array(
-            // Field::make( 'separator', 'separator1', __( 'Images' ) ),
-            Field::make( 'image', 'image', __( 'Image' ) )->set_visible_in_rest_api($visible = true),
-            // Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
-            // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'separator', 'separator2', __( 'Review text' ) ),
-            Field::make( 'text', 'function', __( 'Function' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
-            // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
-            // Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
-            // Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
-            )
-        );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'blog' )
+    //     ->add_fields(array(
+    //         // Field::make( 'text', 'title', __( 'Title' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'image', 'small_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator1', __( 'Hero information' ) ),
+    //         Field::make( 'media_gallery', 'gallery', __( 'Hero images' ) )->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator2', __( 'Blog text' ) ),
+    //         Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+    //         Field::make( 'text', 'page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'page_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
+    //         )
+    //     );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'case' )
+    //     ->add_fields(array(
+    //         // Field::make( 'separator', 'separator1', __( 'Images' ) ),
+    //         Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator2', __( 'Case text' ) ),
+    //         Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+    //         Field::make( 'text', 'page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'page_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
+    //         Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
+    //         )
+    //     );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'review' )
+    //     ->add_fields(array(
+    //         // Field::make( 'separator', 'separator1', __( 'Images' ) ),
+    //         Field::make( 'image', 'image', __( 'Image' ) ),
+    //         // Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator2', __( 'Review text' ) ),
+    //         Field::make( 'text', 'leading_title', __( 'Leading title' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+    //         // Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
+    //         // Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
+    //         )
+    //     );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'teammember' )
+    //     ->add_fields(array(
+    //         // Field::make( 'separator', 'separator1', __( 'Images' ) ),
+    //         Field::make( 'image', 'image', __( 'Image' ) )->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'separator', 'separator2', __( 'Review text' ) ),
+    //         Field::make( 'text', 'function', __( 'Function' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+    //         // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+    //         // Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
+    //         // Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
+    //         )
+    //     );
     // Container::make( 'post_meta', __( 'Information' ) )
     //     ->where( 'post_type', '=', 'office' )
     //     ->add_fields(array(
