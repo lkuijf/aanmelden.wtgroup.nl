@@ -1,0 +1,4 @@
+<?php
+    // die('Access restricted');
+    header("HTTP/1.1 404 Not Found");
+?>
