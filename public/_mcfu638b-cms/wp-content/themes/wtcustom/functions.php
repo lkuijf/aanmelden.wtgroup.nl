@@ -92,12 +92,18 @@ function renderRegistrationPage() {
     global $wpdb;
     $table_name = 'registrations';
     $selectedRegistrationPageId = false;
+    $totalPartners = 0;
+    $totalChildren = 0;
     $pages = get_pages();
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
         $selectedRegistrationPageId = trim($_GET['reg_page_id']);
         $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $selectedRegistrationPageId", ARRAY_A);
     } else {
         $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+    }
+    foreach($results as $res) { // this is not the way, but ok..
+        $totalPartners += $res['partner'];
+        $totalChildren += $res['children_amount'];
     }
     ?>
     <div class="wrap">
@@ -118,9 +124,9 @@ function renderRegistrationPage() {
             <button type="submit">Filteren</button>
         </form>
         <p>
-            Totaal aantal aanmeldingen: <strong>45</strong><br>
-            Totaal aantal partners: <strong>12</strong><br>
-            Totaal aantal kinderen: <strong>5</strong>
+            Totaal aantal aanmeldingen: <strong><?php echo count($results) ?></strong><br>
+            Totaal aantal partners: <strong><?php echo $totalPartners ?></strong><br>
+            Totaal aantal kinderen: <strong><?php echo $totalChildren ?></strong>
         </p>
         <table class="wp-list-table widefat fixed striped">
             <thead>
