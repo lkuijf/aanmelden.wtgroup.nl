@@ -61,45 +61,45 @@ class PagesController extends Controller
         $news = array();
         $vessel = false;
         $newsItem = false;
-        if($section == 'vessels' || $section == 'news') {
-            if(!$page) {
-                if($section == 'vessels') $customPost = new CustomPostApi('vessel');
-                if($section == 'news') $customPost = new CustomPostApi('news');
-                $items = $customPost->get();
-                foreach($items as $k => $item) {
-                    $items[$k]->small_image = $this->getMediaGallery($item->small_image, 'medium_large');
-                }
-                if($section == 'vessels') $vessels = $items;
-                if($section == 'news') $news = $items;
-            }
-            if($page) {
-                if($section == 'vessels') {
-                    $customPost = new CustomPostApi('vessel', false, $page);
-                    $simpleTaxonomies = new SimpleTaxonomiesApi();
-                    $simpleTaxonomies->get();
-                    $this->allTaxonomiesById = $simpleTaxonomies->makeListById();
-                }
-                if($section == 'news') $customPost = new CustomPostApi('news', false, $page);
-                $item = $customPost->get();
-                if(!$item) return abort(404);
-                $item = $item[0];
-                $item->large_image = $this->getMediaGallery($item->large_image, '2048x2048');
-                $item->small_image = $this->getMediaGallery($item->small_image, 'medium_large');
-                if(isset($item->{'pdf-sheet'})) $item->{'pdf-sheet'} = $this->generateMediaUrl($item->{'pdf-sheet'});
-                if(isset($item->vessel_type)) $item->vessel_type = $this->getTerms($item->vessel_type);
-                if($section == 'vessels') $vessel = $item;
-                if($section == 'news') $newsItem = $item;
-            }
-        }
+        // if($section == 'vessels' || $section == 'news') {
+        //     if(!$page) {
+        //         if($section == 'vessels') $customPost = new CustomPostApi('vessel');
+        //         if($section == 'news') $customPost = new CustomPostApi('news');
+        //         $items = $customPost->get();
+        //         foreach($items as $k => $item) {
+        //             $items[$k]->small_image = $this->getMediaGallery($item->small_image, 'medium_large');
+        //         }
+        //         if($section == 'vessels') $vessels = $items;
+        //         if($section == 'news') $news = $items;
+        //     }
+        //     if($page) {
+        //         if($section == 'vessels') {
+        //             $customPost = new CustomPostApi('vessel', false, $page);
+        //             $simpleTaxonomies = new SimpleTaxonomiesApi();
+        //             $simpleTaxonomies->get();
+        //             $this->allTaxonomiesById = $simpleTaxonomies->makeListById();
+        //         }
+        //         if($section == 'news') $customPost = new CustomPostApi('news', false, $page);
+        //         $item = $customPost->get();
+        //         if(!$item) return abort(404);
+        //         $item = $item[0];
+        //         $item->large_image = $this->getMediaGallery($item->large_image, '2048x2048');
+        //         $item->small_image = $this->getMediaGallery($item->small_image, 'medium_large');
+        //         if(isset($item->{'pdf-sheet'})) $item->{'pdf-sheet'} = $this->generateMediaUrl($item->{'pdf-sheet'});
+        //         if(isset($item->vessel_type)) $item->vessel_type = $this->getTerms($item->vessel_type);
+        //         if($section == 'vessels') $vessel = $item;
+        //         if($section == 'news') $newsItem = $item;
+        //     }
+        // }
 // dd($vessel);
 // dd($options);
         // $cartTotalItems = ShopController::getTotalCartItems();
         // $loggedInUserId = ShopController::getLoggedinUser();
 // dd($content->contentSections);
 
-        $instagramFeedPage = new PageApi(1067);
-        $instagramFeedPageData = $instagramFeedPage->get();
-        $instaCode = $instagramFeedPageData->content->rendered;
+        // $instagramFeedPage = new PageApi(1067);
+        // $instagramFeedPageData = $instagramFeedPage->get();
+        // $instaCode = $instagramFeedPageData->content->rendered;
 
         $data= [
             'head_title' => $content->pageTitle,
@@ -113,7 +113,7 @@ class PagesController extends Controller
             // 'news' => $news,
             // 'vessel' => $vessel,
             // 'newsItem' => $newsItem,
-            'instagram_widget_code' => $instaCode,
+            // 'instagram_widget_code' => $instaCode,
         ];
         if($vessel) {
             $data['head_title'] = $vessel->title->rendered . ' - ' . config('app_wt.metaTitle');
@@ -743,54 +743,52 @@ class PagesController extends Controller
                     }
                 }
             }
-            if($sec->_type == 'cases') {
+            // if($sec->_type == 'cases') {
 
-                $caseItems = new SimpleCustomPostsApi('case');
+            //     $caseItems = new SimpleCustomPostsApi('case');
 
-                if($sec->show_cases_online_marketing) $caseItems->parameters['category'] = 'online-marketing';
-                if($sec->show_cases_web_development) $caseItems->parameters['category'] = 'web-development';
-                if($sec->show_cases_events) $caseItems->parameters['category'] = 'events';
+            //     if($sec->show_cases_online_marketing) $caseItems->parameters['category'] = 'online-marketing';
+            //     if($sec->show_cases_web_development) $caseItems->parameters['category'] = 'web-development';
+            //     if($sec->show_cases_events) $caseItems->parameters['category'] = 'events';
                 
-                $caseItems->get();
-                $cases = $caseItems->getItems();
-                foreach($cases as &$case) {
-                    $case->gallery = $this->getMediaGallery($case->gallery);
-                }
-                $sec->cases = $cases;
-// dd($cases);
-            }
-            if($sec->_type == 'schedule_call') {
-                $sec->email_to = Crypt::encryptString($sec->email_to);
-                $sec->success_text = Crypt::encryptString($sec->success_text);
-            }
-            if($sec->_type == 'team_specialists' && count($sec->team_specialists_associations)) {
-                foreach($sec->team_specialists_associations as &$specialist) {
-                    $cTeamMember = new CustomPostApi('teammember', $specialist->id, false);
-                    $teamMember = $cTeamMember->get();
-                    $specialist = $teamMember;
+            //     $caseItems->get();
+            //     $cases = $caseItems->getItems();
+            //     foreach($cases as &$case) {
+            //         $case->gallery = $this->getMediaGallery($case->gallery);
+            //     }
+            //     $sec->cases = $cases;
+            // }
+            // if($sec->_type == 'schedule_call') {
+            //     $sec->email_to = Crypt::encryptString($sec->email_to);
+            //     $sec->success_text = Crypt::encryptString($sec->success_text);
+            // }
+            // if($sec->_type == 'team_specialists' && count($sec->team_specialists_associations)) {
+            //     foreach($sec->team_specialists_associations as &$specialist) {
+            //         $cTeamMember = new CustomPostApi('teammember', $specialist->id, false);
+            //         $teamMember = $cTeamMember->get();
+            //         $specialist = $teamMember;
 
-                    // $cTeamMember = new SimpleCustomPostsApi('teammember');
-                    // $cTeamMember->parameters['ids'] = $specialist->id;
-                    // $teamMembers = $cTeamMember->get();
-                    // $specialist = $teamMembers[0];
-                    if(isset($specialist->image) && $specialist->image) {
-                        $specialist->image = $this->getMediaGallery($specialist->image);
-                    }
-                }
-            }
-            if($sec->_type == 'marketing_terms') {
-                $sec->image1 = $this->getMediaGallery($sec->image1);
-                $sec->image2 = $this->getMediaGallery($sec->image2);
-                $sec->image3 = $this->getMediaGallery($sec->image3);
-                $sec->image4 = $this->getMediaGallery($sec->image4);
-                $sec->image5 = $this->getMediaGallery($sec->image5);
-                $sec->image6 = $this->getMediaGallery($sec->image6);
-                $sec->image7 = $this->getMediaGallery($sec->image7);
-                $sec->image8 = $this->getMediaGallery($sec->image8);
+            //         if(isset($specialist->image) && $specialist->image) {
+            //             $specialist->image = $this->getMediaGallery($specialist->image);
+            //         }
+            //     }
+            // }
+            // if($sec->_type == 'marketing_terms') {
+            //     $sec->image1 = $this->getMediaGallery($sec->image1);
+            //     $sec->image2 = $this->getMediaGallery($sec->image2);
+            //     $sec->image3 = $this->getMediaGallery($sec->image3);
+            //     $sec->image4 = $this->getMediaGallery($sec->image4);
+            //     $sec->image5 = $this->getMediaGallery($sec->image5);
+            //     $sec->image6 = $this->getMediaGallery($sec->image6);
+            //     $sec->image7 = $this->getMediaGallery($sec->image7);
+            //     $sec->image8 = $this->getMediaGallery($sec->image8);
+            // }
+            if($sec->_type == 'registration_form') {
+                $sec->image = $this->getMediaGallery($sec->image);
             }
             $secs[] = $sec;
         }
-// dd($secs);
+dd($secs);
         return $secs;
     }
 }
