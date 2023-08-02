@@ -555,6 +555,14 @@ class PagesController extends Controller
 
         if(!$gall) {
             $i['url'] = 'https://via.placeholder.com/800x600?text=Geen+afbeelding+gevonden';
+            $i['sizes'] = array( // all sizes added 2-8-23, so there is no need to make a check on the front-end
+                'thumbnail' => 'https://via.placeholder.com/200x150?text=Geen+afbeelding+gevonden',
+                'medium' => 'https://via.placeholder.com/400x300?text=Geen+afbeelding+gevonden',
+                'medium_large' => 'https://via.placeholder.com/800x600?text=Geen+afbeelding+gevonden',
+                'large' => 'https://via.placeholder.com/1000x750?text=Geen+afbeelding+gevonden',
+                '1536x1536' => 'https://via.placeholder.com/1200x900?text=Geen+afbeelding+gevonden',
+                '2048x2048' => 'https://via.placeholder.com/1600x1200?text=Geen+afbeelding+gevonden',
+            );
             $i['alt'] = 'Geen afbeelding gevonden';
             $res[] = $i;
             return $res;
@@ -788,7 +796,7 @@ class PagesController extends Controller
             }
             $secs[] = $sec;
         }
-dd($secs);
+// dd($secs);
         return $secs;
     }
 }

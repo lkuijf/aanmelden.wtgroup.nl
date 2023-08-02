@@ -1,0 +1,121 @@
+$sbp1_desktop: 1200px; // ScreenBreakpoint for Desktops
+$sbp2_laptop: 1024px; // ScreenBreakpoint for Laptops
+$sbp3_tablet: 768px; // // ScreenBreakpoint for iPads/Tablets
+$sbp4_mobile: 480px; // ScreenBreakpoint for Mobile devices
+
+// $contentWidth: 100%; // max contentwidht .inner
+// $contentWidthFooter: 1600px;
+// $headerHeight: 200px;
+// $headerHeightAfterScroll: 120px;
+
+$colorBlack: #222; // text
+$colorWTGroup: #006878;
+// $colorBlackLight: #555;
+// $colorWTM: #19b4b6; // logo color
+
+$fontFamily: 'Inter', sans-serif;
+// $fontFamilyButton: 'Karla', sans-serif;
+$fontSize: 16px;
+
+// @import 'inc/burger-menu.adapter';
+@import 'inc/contact-form';
+@import 'inc/totop-btn';
+// @import 'inc/hero';
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $colorBlack;
+    // background-color: $colorWhite;
+    scroll-behavior: smooth;
+    // background-image: url('../statics/bg_v3.jpg');
+    // background-repeat: repeat;
+    // background-size: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img {
+    vertical-align: middle; // removes bottom 3px margin.
+}
+
+header {
+    border-bottom: 1px solid #CCC;
+    .triangle-top-left {
+        position: absolute;
+        z-index: 1;
+        border-top: 60px solid #FFF;
+        border-right: 60px solid transparent;
+    }
+    > img {
+        position: absolute;
+        z-index: 1;
+        top: -30px;
+        left: -40px;
+    }
+    > picture {
+        display: block;
+        height: 500px;
+        overflow: hidden;
+        border-bottom: 2px solid #000;
+        img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            // object-position: center bottom;
+            animation: scaleZoom 40s linear infinite;
+        }
+    }
+}
+
+@keyframes scaleZoom {
+    50% {
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+.contentWrapper {
+    min-height: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    padding: 0 60px;
+    @media (max-width: $sbp1_desktop) {padding: 0 50px;}
+    @media (max-width: $sbp2_laptop) {padding: 0 40px;}
+    @media (max-width: $sbp3_tablet) {padding: 0 30px;}
+    @media (max-width: $sbp4_mobile) {padding: 0 20px;}
+    h1 {
+        font-size: 2em;
+        color: $colorWTGroup;
+    }
+    // input, textarea {
+    //     font-family: $fontFamily;
+    //     font-size: $fontSize;
+    //     border: 1px solid red;
+    // }
+}
+
+// .fieldlist {
+//     width: 70%;
+//     margin-left: auto;
+//     margin-right: auto;
+//     div {
+//         display: flex;
+//         justify-content: space-between;
+//     }
+// }
+
+footer {
+    background-color: $colorBlack;
+    min-height: 150px;
+    color: #FFF;
+}

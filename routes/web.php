@@ -25,10 +25,11 @@ Route::get('/admin', function () {return redirect('/_mcfu638b-cms/wp-admin');});
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+// Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
 
-//test2
 Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
     'section' => '[a-z0-9_-]+',
 ]);

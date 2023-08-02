@@ -1,11 +1,9 @@
 @foreach ($data['content_sections'] as $section)
     @if($section->_type == 'registration_form')
         @include('sections.registration_form', [
-            'images' => $section->crb_media_gallery,
+            'image' => $section->image[0],
             'title' => $section->title,
             'text' => $section->text,
-            'email' => $section->btn_email,
-            'phone' => $section->btn_phone,
             ])
     @endif
     {{-- @if ($section->_type == '_anchor')

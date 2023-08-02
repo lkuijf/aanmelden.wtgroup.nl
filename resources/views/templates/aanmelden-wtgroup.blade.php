@@ -31,7 +31,9 @@
         </div>
     @endif
     <header>
-        <p>HDR</p>
+        <img src="{{ asset('statics/wt-group-logo.png') }}" alt="W.T. Group B.V.">
+        <span class="triangle-top-left"></span>
+        @yield('header')
     </header>
 
     <div class="contentWrapper">
@@ -39,7 +41,7 @@
     </div>
     
     <footer>
-        <p>FTR</p>
+        <p>Erat velit scelerisque in dictum non consectetur a erat. Felis eget velit aliquet sagittis id consectetur purus ut faucibus. Turpis nunc eget lorem dolor sed viverra ipsum nunc.</p>
     </footer>
 
     <a href="" id="toTop"></a>
