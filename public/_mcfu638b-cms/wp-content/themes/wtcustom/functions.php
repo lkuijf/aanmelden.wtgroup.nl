@@ -505,26 +505,44 @@ function crbRegisterFields($args) {
         ->add_tab( __('Page content'), array(
             Field::make( 'complex', 'crb_sections', 'Sections' )->set_visible_in_rest_api($visible = true)
                 ->set_layout( 'tabbed-vertical' )
-                ->add_fields( 'hero', 'Hero (big header)', array(
-                    Field::make( 'separator', 'separator1', __( 'Hero (big header)' ) ),
-                    Field::make( 'media_gallery', 'crb_media_gallery', __( 'Media Gallery' ) )
-                        ->set_type( array( 'image' ) )->set_duplicates_allowed( false ),
-                    Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ) ),
-                    // Field::make( 'text', 'small_header', __( 'Small header text (can use html-tags)' ) ),
-                    Field::make( 'textarea', 'text', __( 'Text (can use html-tags)' ) ),
-                    Field::make( 'text', 'btn_email', __( 'E-mail address (leave blank to remove the button)' ) ),
-                    Field::make( 'text', 'btn_phone', __( 'Phone number (leave blank to remove the button)' ) ),
-                    // Field::make( 'checkbox', 'show_logo', __('Show Glomar Offshore logo') ),
+                // ->add_fields( 'hero', 'Hero (big header)', array(
+                //     Field::make( 'separator', 'separator1', __( 'Hero (big header)' ) ),
+                //     Field::make( 'media_gallery', 'crb_media_gallery', __( 'Media Gallery' ) )
+                //         ->set_type( array( 'image' ) )->set_duplicates_allowed( false ),
+                //     Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ) ),
+                //     // Field::make( 'text', 'small_header', __( 'Small header text (can use html-tags)' ) ),
+                //     Field::make( 'textarea', 'text', __( 'Text (can use html-tags)' ) ),
+                //     Field::make( 'text', 'btn_email', __( 'E-mail address (leave blank to remove the button)' ) ),
+                //     Field::make( 'text', 'btn_phone', __( 'Phone number (leave blank to remove the button)' ) ),
+                //     // Field::make( 'checkbox', 'show_logo', __('Show Glomar Offshore logo') ),
 
-                    // Field::make( 'image', 'image', 'Afbeelding' )->set_value_type( 'url' ),
-                    // Field::make( 'select', 'color', __( 'Choose block letters color' ) )
-                    // ->set_options( array(
-                        // 'white' => __( 'White' ),
-                        // 'black' => __( 'Black' ),
-                    // ) ),
-                    // Field::make( 'checkbox', 'show_reserve_button', __( 'Show reserve button' ) ),
-                    // Field::make( 'image', 'image', 'Afbeelding' ),
-                    // Field::make( 'rich_text', 'text', 'Tekst' ),
+                //     // Field::make( 'image', 'image', 'Afbeelding' )->set_value_type( 'url' ),
+                //     // Field::make( 'select', 'color', __( 'Choose block letters color' ) )
+                //     // ->set_options( array(
+                //         // 'white' => __( 'White' ),
+                //         // 'black' => __( 'Black' ),
+                //     // ) ),
+                //     // Field::make( 'checkbox', 'show_reserve_button', __( 'Show reserve button' ) ),
+                //     // Field::make( 'image', 'image', 'Afbeelding' ),
+                //     // Field::make( 'rich_text', 'text', 'Tekst' ),
+                // ) )
+                ->add_fields( 'registration_form', 'Aanmeld formulier', array(
+                    Field::make( 'separator', 'separator1', __( 'Formulier gegevens' ) ),
+                    Field::make( 'image', 'image', __( 'Hero image' ) ),
+                    Field::make( 'text', 'title', __( 'Title' ) ),
+                    Field::make( 'rich_text', 'text', __( 'Text' ) ),
+                    Field::make( 'separator', 'separator2', __( 'Formulier opties' ) ),
+                    Field::make( 'checkbox', 'show_full_name', __( 'Show Full name field' ) ),
+                    Field::make( 'checkbox', 'show_first_name', __( 'Show First name field' ) ),
+                    Field::make( 'checkbox', 'show_last_name', __( 'Show Last name field' ) ),
+                    Field::make( 'checkbox', 'show_birth_date', __( 'Show Birth date field' ) ),
+                    // Field::make( 'checkbox', 'show_email', __( 'Show E-mail field' ) ),
+                    Field::make( 'checkbox', 'show_company', __( 'Show Company field' ) ),
+                    Field::make( 'checkbox', 'show_diet_wishes', __( 'Show Diet wishes checkboxes' ) ),
+                    Field::make( 'checkbox', 'show_partner', __( 'Show Partner y/n checkbox' ) ),
+                    Field::make( 'checkbox', 'show_partner_name', __( 'Show Partner name field' ) ),
+                    Field::make( 'checkbox', 'show_children_amount', __( 'Show children amount drop-down' ) ),
+                    Field::make( 'checkbox', 'show_children_ages', __( 'Show children ages field' ) ),
                 ) )
                 // ->add_fields( 'text', 'Tekst', array(
                 //     Field::make( 'separator', 'separator1', __( 'Text section' ) ),
@@ -593,16 +611,16 @@ function crbRegisterFields($args) {
                 //         ),
                 //     ) )
                 // ) )
-                ->add_fields( 'team_specialists', 'Team specialists', array(
-                    Field::make( 'separator', 'separator1', __( 'Team specialists' ) ),
-                    Field::make( 'association', 'team_specialists_associations', __( 'Select team specialists' ))
-                    ->set_types( array(
-                        array(
-                            'type' => 'post',
-                            'post_type' => 'teammember',
-                        ),
-                    ) )
-                ) )
+                // ->add_fields( 'team_specialists', 'Team specialists', array(
+                //     Field::make( 'separator', 'separator1', __( 'Team specialists' ) ),
+                //     Field::make( 'association', 'team_specialists_associations', __( 'Select team specialists' ))
+                //     ->set_types( array(
+                //         array(
+                //             'type' => 'post',
+                //             'post_type' => 'teammember',
+                //         ),
+                //     ) )
+                // ) )
                 // ->add_fields( 'news_boxes', 'News', array(
                 //     Field::make( 'separator', 'separator1', __( 'News' ) ),
                 //     Field::make( 'association', 'news_associations', __( 'Select news (max 3)' ))
@@ -623,69 +641,69 @@ function crbRegisterFields($args) {
                 //         ),
                 //     ) )
                 // ) )
-                ->add_fields( 'packages', 'Price Packages', array(
-                    Field::make( 'separator', 'separator1', __( 'Prijs Pakketten' ) ),
-                    Field::make( 'checkbox', 'show_packages', __( 'Show Pricing Packages' ) ),
-                ) )
-                ->add_fields( 'working_with', 'Clients', array(
-                    Field::make( 'separator', 'separator1', __( 'Clients' ) ),
-                    Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
-                ) )
-                ->add_fields( 'reviews', 'Reviews', array(
-                    Field::make( 'separator', 'separator1', __( 'Reviews' ) ),
-                    Field::make( 'checkbox', 'show_reviews', __( 'Show Reviews' ) ),
-                ) )
-                ->add_fields( 'teammembers', 'Team members', array(
-                    Field::make( 'separator', 'separator1', __( 'Team members' ) ),
-                    Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
-                ) )
-                ->add_fields( 'service_page_text_header', 'Service page text header', array(
-                    Field::make( 'separator', 'separator1', __( 'Service page text header (H1)' ) ),
-                    // Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
-                    Field::make( 'text', 'title', __( 'Header text' ) ),
-                ) )
-                ->add_fields( 'marketing_terms', 'Marketing terms', array(
-                    Field::make( 'separator', 'separator1', __( 'Marketing page terms' ) ),
-                    // Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
-                    Field::make( 'image', 'image1', __( 'Term 1 image' ) ),
-                    Field::make( 'text', 'term1', __( 'Term 1 title' ) ),
-                    Field::make( 'text', 'term1_text', __( 'Term 1 text' ) ),
-                    Field::make( 'image', 'image2', __( 'Term 2 image' ) ),
-                    Field::make( 'text', 'term2', __( 'Term 2 title' ) ),
-                    Field::make( 'text', 'term2_text', __( 'Term 2 text' ) ),
-                    Field::make( 'image', 'image3', __( 'Term 3 image' ) ),
-                    Field::make( 'text', 'term3', __( 'Term 3 title' ) ),
-                    Field::make( 'text', 'term3_text', __( 'Term 4 text' ) ),
-                    Field::make( 'image', 'image4', __( 'Term 4 image' ) ),
-                    Field::make( 'text', 'term4', __( 'Term 4 title' ) ),
-                    Field::make( 'text', 'term4_text', __( 'Term 5 text' ) ),
-                    Field::make( 'image', 'image5', __( 'Term 5 image' ) ),
-                    Field::make( 'text', 'term5', __( 'Term 5 title' ) ),
-                    Field::make( 'text', 'term5_text', __( 'Term 6 text' ) ),
-                    Field::make( 'image', 'image6', __( 'Term 6 image' ) ),
-                    Field::make( 'text', 'term6', __( 'Term 6 title' ) ),
-                    Field::make( 'text', 'term6_text', __( 'Term 7 text' ) ),
-                    Field::make( 'image', 'image7', __( 'Term 7 image' ) ),
-                    Field::make( 'text', 'term7', __( 'Term 7 title' ) ),
-                    Field::make( 'text', 'term7_text', __( 'Term 8 text' ) ),
-                    Field::make( 'image', 'image8', __( 'Term 8 image' ) ),
-                    Field::make( 'text', 'term8', __( 'Term 8 title' ) ),
-                    Field::make( 'text', 'term8_text', __( 'Term 9 text' ) ),
-                ) )
-                ->add_fields( 'cases', 'Cases', array(
-                    Field::make( 'separator', 'separator1', __( 'Cases' ) ),
-                    Field::make( 'checkbox', 'show_cases_highlighted', __( 'Show highlighted cases' ) ),
-                    Field::make( 'checkbox', 'show_cases_online_marketing', __( 'Show online marketing cases' ) ),
-                    Field::make( 'checkbox', 'show_cases_web_development', __( 'Show web development cases' ) ),
-                    Field::make( 'checkbox', 'show_cases_events', __( 'Show event cases' ) ),
-                ) )
-                ->add_fields( 'schedule_call', 'Schedule a call Form', array(
-                    Field::make( 'separator', 'separator1', __( 'Schedule a call' ) ),
-                    Field::make( 'text', 'title', __( 'Title' ) ),
-                    Field::make( 'rich_text', 'text', __( 'Text' ) ),
-                    Field::make( 'text', 'email_to', __( 'E-mail to' ) ),
-                    Field::make( 'text', 'success_text', __( 'Text on success' ) ),
-                ) )
+                // ->add_fields( 'packages', 'Price Packages', array(
+                //     Field::make( 'separator', 'separator1', __( 'Prijs Pakketten' ) ),
+                //     Field::make( 'checkbox', 'show_packages', __( 'Show Pricing Packages' ) ),
+                // ) )
+                // ->add_fields( 'working_with', 'Clients', array(
+                //     Field::make( 'separator', 'separator1', __( 'Clients' ) ),
+                //     Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
+                // ) )
+                // ->add_fields( 'reviews', 'Reviews', array(
+                //     Field::make( 'separator', 'separator1', __( 'Reviews' ) ),
+                //     Field::make( 'checkbox', 'show_reviews', __( 'Show Reviews' ) ),
+                // ) )
+                // ->add_fields( 'teammembers', 'Team members', array(
+                //     Field::make( 'separator', 'separator1', __( 'Team members' ) ),
+                //     Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
+                // ) )
+                // ->add_fields( 'service_page_text_header', 'Service page text header', array(
+                //     Field::make( 'separator', 'separator1', __( 'Service page text header (H1)' ) ),
+                //     // Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
+                //     Field::make( 'text', 'title', __( 'Header text' ) ),
+                // ) )
+                // ->add_fields( 'marketing_terms', 'Marketing terms', array(
+                //     Field::make( 'separator', 'separator1', __( 'Marketing page terms' ) ),
+                //     // Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
+                //     Field::make( 'image', 'image1', __( 'Term 1 image' ) ),
+                //     Field::make( 'text', 'term1', __( 'Term 1 title' ) ),
+                //     Field::make( 'text', 'term1_text', __( 'Term 1 text' ) ),
+                //     Field::make( 'image', 'image2', __( 'Term 2 image' ) ),
+                //     Field::make( 'text', 'term2', __( 'Term 2 title' ) ),
+                //     Field::make( 'text', 'term2_text', __( 'Term 2 text' ) ),
+                //     Field::make( 'image', 'image3', __( 'Term 3 image' ) ),
+                //     Field::make( 'text', 'term3', __( 'Term 3 title' ) ),
+                //     Field::make( 'text', 'term3_text', __( 'Term 4 text' ) ),
+                //     Field::make( 'image', 'image4', __( 'Term 4 image' ) ),
+                //     Field::make( 'text', 'term4', __( 'Term 4 title' ) ),
+                //     Field::make( 'text', 'term4_text', __( 'Term 5 text' ) ),
+                //     Field::make( 'image', 'image5', __( 'Term 5 image' ) ),
+                //     Field::make( 'text', 'term5', __( 'Term 5 title' ) ),
+                //     Field::make( 'text', 'term5_text', __( 'Term 6 text' ) ),
+                //     Field::make( 'image', 'image6', __( 'Term 6 image' ) ),
+                //     Field::make( 'text', 'term6', __( 'Term 6 title' ) ),
+                //     Field::make( 'text', 'term6_text', __( 'Term 7 text' ) ),
+                //     Field::make( 'image', 'image7', __( 'Term 7 image' ) ),
+                //     Field::make( 'text', 'term7', __( 'Term 7 title' ) ),
+                //     Field::make( 'text', 'term7_text', __( 'Term 8 text' ) ),
+                //     Field::make( 'image', 'image8', __( 'Term 8 image' ) ),
+                //     Field::make( 'text', 'term8', __( 'Term 8 title' ) ),
+                //     Field::make( 'text', 'term8_text', __( 'Term 9 text' ) ),
+                // ) )
+                // ->add_fields( 'cases', 'Cases', array(
+                //     Field::make( 'separator', 'separator1', __( 'Cases' ) ),
+                //     Field::make( 'checkbox', 'show_cases_highlighted', __( 'Show highlighted cases' ) ),
+                //     Field::make( 'checkbox', 'show_cases_online_marketing', __( 'Show online marketing cases' ) ),
+                //     Field::make( 'checkbox', 'show_cases_web_development', __( 'Show web development cases' ) ),
+                //     Field::make( 'checkbox', 'show_cases_events', __( 'Show event cases' ) ),
+                // ) )
+                // ->add_fields( 'schedule_call', 'Schedule a call Form', array(
+                //     Field::make( 'separator', 'separator1', __( 'Schedule a call' ) ),
+                //     Field::make( 'text', 'title', __( 'Title' ) ),
+                //     Field::make( 'rich_text', 'text', __( 'Text' ) ),
+                //     Field::make( 'text', 'email_to', __( 'E-mail to' ) ),
+                //     Field::make( 'text', 'success_text', __( 'Text on success' ) ),
+                // ) )
                 // ->add_fields( 'get_in_touch', 'Get in touch', array(
                 //     Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),
                 //     Field::make( 'checkbox', 'show_get_in_touch', __( 'Show "Get in touch" section' ) ),
@@ -710,103 +728,103 @@ function crbRegisterFields($args) {
                 //     ) )
                 // ) )
 
-                ->add_fields( '1column', 'Content', array(
-                    Field::make( 'complex', 'fullwidth', 'Content' )
-                        ->add_fields('tekst', array(
-                            // Field::make( 'separator', 'separator1', __( 'Text' ) ),
-                            Field::make( 'rich_text', 'text', 'Tekst' ),
-                        ) )
-                        ->add_fields('afbeelding', array(
-                            // Field::make( 'separator', 'separator1', __( 'Image' ) ),
-                            Field::make( 'image', 'image', 'Afbeelding' ),
-                        ) )
-                        ->add_fields('button', array(
-                            Field::make( 'text', 'title', 'Titel' ),
-                            Field::make( 'text', 'url', 'Link' ),
-                        ) )
-                        ->add_fields( 'services_buttons', 'Services buttons', array(
-                            // Field::make( 'separator', 'separator1', __( 'Services' ) ),
-                            Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
-                        ) ),
+                // ->add_fields( '1column', 'Content', array(
+                //     Field::make( 'complex', 'fullwidth', 'Content' )
+                //         ->add_fields('tekst', array(
+                //             // Field::make( 'separator', 'separator1', __( 'Text' ) ),
+                //             Field::make( 'rich_text', 'text', 'Tekst' ),
+                //         ) )
+                //         ->add_fields('afbeelding', array(
+                //             // Field::make( 'separator', 'separator1', __( 'Image' ) ),
+                //             Field::make( 'image', 'image', 'Afbeelding' ),
+                //         ) )
+                //         ->add_fields('button', array(
+                //             Field::make( 'text', 'title', 'Titel' ),
+                //             Field::make( 'text', 'url', 'Link' ),
+                //         ) )
+                //         ->add_fields( 'services_buttons', 'Services buttons', array(
+                //             // Field::make( 'separator', 'separator1', __( 'Services' ) ),
+                //             Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
+                //         ) ),
 
-                        // ->add_fields('bestand', array(
-                        //     Field::make( 'file', 'file', 'Bestand' ),
-                        //     Field::make( 'text', 'title', 'Titel' ),
-                        // ) )
-                        // ->add_fields('nieuws-items', array(
-                        //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
-                        //     ->set_types( array(
-                        //         array(
-                        //             'type' => 'post',
-                        //             'post_type' => 'news',
-                        //         ),
-                        //     ) )
-                        // ) ),
-                ) )
+                //         // ->add_fields('bestand', array(
+                //         //     Field::make( 'file', 'file', 'Bestand' ),
+                //         //     Field::make( 'text', 'title', 'Titel' ),
+                //         // ) )
+                //         // ->add_fields('nieuws-items', array(
+                //         //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
+                //         //     ->set_types( array(
+                //         //         array(
+                //         //             'type' => 'post',
+                //         //             'post_type' => 'news',
+                //         //         ),
+                //         //     ) )
+                //         // ) ),
+                // ) )
 
-                ->add_fields( '2column', 'Content (2 kolommen)', array(
-                    Field::make( 'select', 'column_direction', __( 'Column direction on mobile device' ) )
-                    ->set_options( array(
-                        'default' => __( 'Standaard' ),
-                        'reverse' => __( 'Omgekeerd' ),
-                    ) ),
-                    Field::make( 'complex', 'left', 'Linker kolom' )
-                        ->add_fields('tekst', array(
-                            Field::make( 'rich_text', 'text', 'Tekst' ),
-                        ) )
-                        ->add_fields('afbeelding', array(
-                            Field::make( 'image', 'image', 'Afbeelding' ),
-                        ) )
-                        ->add_fields('button', array(
-                            Field::make( 'text', 'title', 'Titel' ),
-                            Field::make( 'text', 'url', 'Link' ),
-                        ) )
-                        ->add_fields( 'services_buttons', 'Services buttons', array(
-                            // Field::make( 'separator', 'separator1', __( 'Services' ) ),
-                            Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
-                        ) ),
-                        // ->add_fields('bestand', array(
-                        //     Field::make( 'file', 'file', 'Bestand' ),
-                        //     Field::make( 'text', 'title', 'Titel' ),
-                        // ) )
-                        // ->add_fields('nieuws-items', array(
-                        //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
-                        //     ->set_types( array(
-                        //         array(
-                        //             'type' => 'post',
-                        //             'post_type' => 'news',
-                        //         ),
-                        //     ) )
-                        // ) ),
-                    Field::make( 'complex', 'right', 'Rechter kolom' )
-                        ->add_fields('tekst', array(
-                            Field::make( 'rich_text', 'text', 'Tekst' ),
-                        ) )
-                        ->add_fields('afbeelding', array(
-                            Field::make( 'image', 'image', 'Afbeelding' ),
-                        ) )
-                        ->add_fields('button', array(
-                            Field::make( 'text', 'title', 'Titel' ),
-                            Field::make( 'text', 'url', 'Link' ),
-                        ) )
-                        ->add_fields( 'services_buttons', 'Services buttons', array(
-                            // Field::make( 'separator', 'separator1', __( 'Services' ) ),
-                            Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
-                        ) ),
-                        // ->add_fields('bestand', array(
-                        //     Field::make( 'file', 'file', 'Bestand' ),
-                        //     Field::make( 'text', 'title', 'Titel' ),
-                        // ) )
-                        // ->add_fields('nieuws-items', array(
-                        //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
-                        //     ->set_types( array(
-                        //         array(
-                        //             'type' => 'post',
-                        //             'post_type' => 'news',
-                        //         ),
-                        //     ) )
-                        // ) )
-                ) )
+                // ->add_fields( '2column', 'Content (2 kolommen)', array(
+                //     Field::make( 'select', 'column_direction', __( 'Column direction on mobile device' ) )
+                //     ->set_options( array(
+                //         'default' => __( 'Standaard' ),
+                //         'reverse' => __( 'Omgekeerd' ),
+                //     ) ),
+                //     Field::make( 'complex', 'left', 'Linker kolom' )
+                //         ->add_fields('tekst', array(
+                //             Field::make( 'rich_text', 'text', 'Tekst' ),
+                //         ) )
+                //         ->add_fields('afbeelding', array(
+                //             Field::make( 'image', 'image', 'Afbeelding' ),
+                //         ) )
+                //         ->add_fields('button', array(
+                //             Field::make( 'text', 'title', 'Titel' ),
+                //             Field::make( 'text', 'url', 'Link' ),
+                //         ) )
+                //         ->add_fields( 'services_buttons', 'Services buttons', array(
+                //             // Field::make( 'separator', 'separator1', __( 'Services' ) ),
+                //             Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
+                //         ) ),
+                //         // ->add_fields('bestand', array(
+                //         //     Field::make( 'file', 'file', 'Bestand' ),
+                //         //     Field::make( 'text', 'title', 'Titel' ),
+                //         // ) )
+                //         // ->add_fields('nieuws-items', array(
+                //         //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
+                //         //     ->set_types( array(
+                //         //         array(
+                //         //             'type' => 'post',
+                //         //             'post_type' => 'news',
+                //         //         ),
+                //         //     ) )
+                //         // ) ),
+                //     Field::make( 'complex', 'right', 'Rechter kolom' )
+                //         ->add_fields('tekst', array(
+                //             Field::make( 'rich_text', 'text', 'Tekst' ),
+                //         ) )
+                //         ->add_fields('afbeelding', array(
+                //             Field::make( 'image', 'image', 'Afbeelding' ),
+                //         ) )
+                //         ->add_fields('button', array(
+                //             Field::make( 'text', 'title', 'Titel' ),
+                //             Field::make( 'text', 'url', 'Link' ),
+                //         ) )
+                //         ->add_fields( 'services_buttons', 'Services buttons', array(
+                //             // Field::make( 'separator', 'separator1', __( 'Services' ) ),
+                //             Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
+                //         ) ),
+                //         // ->add_fields('bestand', array(
+                //         //     Field::make( 'file', 'file', 'Bestand' ),
+                //         //     Field::make( 'text', 'title', 'Titel' ),
+                //         // ) )
+                //         // ->add_fields('nieuws-items', array(
+                //         //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
+                //         //     ->set_types( array(
+                //         //         array(
+                //         //             'type' => 'post',
+                //         //             'post_type' => 'news',
+                //         //         ),
+                //         //     ) )
+                //         // ) )
+                // ) )
 
         ))
         ->add_tab( __('Page information'), array(
