@@ -28,7 +28,7 @@ Route::get('/', function () {
 });
 
 
-
+//test
 Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
     'section' => '[a-z0-9_-]+',
 ]);
