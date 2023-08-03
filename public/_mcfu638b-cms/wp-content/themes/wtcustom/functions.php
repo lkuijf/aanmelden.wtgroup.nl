@@ -143,7 +143,7 @@ function renderRegistrationPage() {
                     <th style="font-size:11px">Aantal kinderen</th>
                     <th style="font-size:11px">Leeftijd kinderen</th>
                     <th style="font-size:11px">Aangemeld voor</th>
-                    <th style="font-size:11px">Tijdstip aanmelding</th>
+                    <th style="font-size:11px">Tijdstip aanmelding (UTC)</th>
                 </tr>
             </thead>
             <tbody>
