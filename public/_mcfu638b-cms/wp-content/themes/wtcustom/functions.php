@@ -538,11 +538,11 @@ function crbRegisterFields($args) {
                     Field::make( 'checkbox', 'show_birth_date', __( 'Show Birth date field' ) ),
                     // Field::make( 'checkbox', 'show_email', __( 'Show E-mail field' ) ),
                     Field::make( 'checkbox', 'show_company', __( 'Show Company field' ) ),
-                    Field::make( 'checkbox', 'show_diet_wishes', __( 'Show Diet wishes checkboxes' ) ),
                     Field::make( 'checkbox', 'show_partner', __( 'Show Partner y/n checkbox' ) ),
                     Field::make( 'checkbox', 'show_partner_name', __( 'Show Partner name field' ) ),
                     Field::make( 'checkbox', 'show_children_amount', __( 'Show children amount drop-down' ) ),
                     Field::make( 'checkbox', 'show_children_ages', __( 'Show children ages field' ) ),
+                    Field::make( 'checkbox', 'show_diet_wishes', __( 'Show Diet wishes checkboxes' ) ),
                 ) )
                 // ->add_fields( 'text', 'Tekst', array(
                 //     Field::make( 'separator', 'separator1', __( 'Text section' ) ),
