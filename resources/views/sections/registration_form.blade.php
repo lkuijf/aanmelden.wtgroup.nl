@@ -21,7 +21,10 @@
             @if($show_company)<div @error('company')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-company">Bedrijfsnaam *</label><input type="text" id="form-company" name="company" size="25" value="{{ old('company') }}" placeholder="Bij welk bedrijf werk je?"></div>@endif
             @if($show_partner)<div>
                 <label for="form-partner">Inclusief partner?</label>
-                <input type="checkbox" id="form-partner" name="partner" value="1"@if(old('partner') && old('partner') == 1){{ ' checked' }}@endif><span>Ja</span>
+                <div>
+                    <input type="checkbox" id="form-partner" name="partner" value="1"@if(old('partner') && old('partner') == 1){{ ' checked' }}@endif>
+                    <span>Ja</span>
+                </div>
             </div>@endif
             @if($show_partner_name)<div @error('partner_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-partner_name">Naam partner</label><input type="text" id="form-partner_name" name="partner_name" size="25" value="{{ old('partner_name') }}" placeholder="Naam van je partner"></div>@endif
             @if($show_children_amount)<div>

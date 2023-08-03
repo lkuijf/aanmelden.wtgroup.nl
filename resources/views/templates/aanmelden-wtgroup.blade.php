@@ -48,7 +48,7 @@
     </div>
     
     <footer>
-        <p>Erat velit scelerisque in dictum non consectetur a erat. Felis eget velit aliquet sagittis id consectetur purus ut faucibus. Turpis nunc eget lorem dolor sed viverra ipsum nunc.</p>
+        <p>W.T. Group b.v. | Lentedans 51a | 2907 AX Capelle a/d IJssel | Nederland | +31 (0) 10 285 7990 | info@wtgroup.nl</p>
     </footer>
 
     <a href="" id="toTop"></a>

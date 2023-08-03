@@ -1,6 +1,7 @@
 const toTopBtn = document.querySelector('#toTop');
 const dietTextarea = document.querySelector('textarea[name=diet_anders]');
 const dietAndersRadio = document.querySelector('input#form-diet_anders');
+const alertMsg = document.querySelector('.alert');
 
 /***** To Top Button *************************/
 toTopBtn.addEventListener('click', (e) => {
@@ -38,3 +39,8 @@ if(dietTextarea) {
     });
 }
 /*********************************************************************/
+/***** Remove alert message after some time *******/
+if(alertMsg) {
+    setTimeout(function() { alertMsg.remove(); }, 10000);
+}
+/**************************************************/
