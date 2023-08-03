@@ -128,6 +128,8 @@ class SubmitController extends Controller
         // mail($to_email, $subjectCompany, $messages[0], $headers);
         // // mail($request->get('E-mail_adres'), $subjectVisitor, $messages[1], $headers);
 
+        $birthDateParts = explode('-', $valuesToStore['birth_date']);
+        $valuesToStore['birth_date'] = implode('-', array_reverse($birthDateParts));
 
         $registration = new Registration;
         $registration->full_name = $valuesToStore['full_name'];
