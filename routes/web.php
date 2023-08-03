@@ -24,7 +24,8 @@ Route::get('/admin', function () {return redirect('/_mcfu638b-cms/wp-admin');});
 /***************************************************************************************************************************************************/
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    echo 'Nothing here';
 })->name('home');
 
 // Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
