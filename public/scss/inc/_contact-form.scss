@@ -101,6 +101,7 @@ form {
         textarea {
             @media (max-width: $sbp4_mobile) {
                 width: 95%;
+                margin-right: 20px;
             }
         }
     }
