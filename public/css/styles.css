@@ -112,11 +112,12 @@ form .error span {
   bottom: -80px;
   z-index: 102;
   cursor: default;
-  background-color: #222;
+  background-color: #006878;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   text-decoration: none;
+  box-shadow: 0px 0px 10px #FFF;
   transition: bottom 0.3s ease;
 }
 #toTop:before {
@@ -128,8 +129,8 @@ form .error span {
 #toTop.show {
   bottom: 40px;
 }
-#toTop:hover:before {
-  color: #006878;
+#toTop:hover {
+  box-shadow: 0px 0px 20px #AAA;
 }
 
 html, body {
@@ -196,7 +197,7 @@ header > picture img {
   }
 }
 .contentWrapper {
-  min-height: 2000px;
+  margin-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1100px;
@@ -231,4 +232,5 @@ footer {
   background-color: #222;
   min-height: 150px;
   color: #FFF;
+  padding-bottom: 250px;
 }/*# sourceMappingURL=styles.css.map */

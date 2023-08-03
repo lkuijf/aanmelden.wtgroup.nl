@@ -7,12 +7,12 @@
     bottom: -80px; // height + shadow
     z-index: 102;
     cursor: default;
-    background-color: $colorBlack;
+    background-color: $colorWTGroup;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     text-decoration: none;
-    // box-shadow: 0px 0px 10px #FFF;
+    box-shadow: 0px 0px 10px #FFF;
     transition: bottom 0.3s ease;
     &:before {
         font-family: "aanmelden_wtgroup";
@@ -24,6 +24,9 @@
         bottom: 40px;
     }
     &:hover:before {
-        color: $colorWTGroup;
+        // color: $colorBlack;
+    }
+    &:hover {
+        box-shadow: 0px 0px 20px #AAA;
     }
 }
