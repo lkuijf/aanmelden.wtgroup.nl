@@ -10,6 +10,10 @@
 @section('content')
     <h1>{{ $title }}</h1>
     {!! $text !!}
+    @if($close_form)
+        <h2>Aanmelden gesloten!</h2>
+        <p>Je kan niet meer aanmelden voor dit evenement.</p>
+    @else
     <form action="{{ route('submitRegistrationForm') }}" method="post">
         @csrf
         <div class="fieldlist">
@@ -70,4 +74,5 @@
             </div>
         </div>
     </form>
+    @endif
 @endsection

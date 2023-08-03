@@ -14,6 +14,7 @@
             'show_partner_name' => $section->show_partner_name,
             'show_children_amount' => $section->show_children_amount,
             'show_children_ages' => $section->show_children_ages,
+            'close_form' => $section->close_form,
             ])
     @endif
     {{-- @if ($section->_type == '_anchor')

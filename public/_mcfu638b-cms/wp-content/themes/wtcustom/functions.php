@@ -543,6 +543,8 @@ function crbRegisterFields($args) {
                     Field::make( 'checkbox', 'show_children_amount', __( 'Show children amount drop-down' ) ),
                     Field::make( 'checkbox', 'show_children_ages', __( 'Show children ages field' ) ),
                     Field::make( 'checkbox', 'show_diet_wishes', __( 'Show Diet wishes checkboxes' ) ),
+                    Field::make( 'separator', 'separator3', __( 'Formulier sluiten' ) ),
+                    Field::make( 'checkbox', 'close_form', __( 'Sluit het formulier. Pagina is nog wel beschikbaar, maar er kan niet meer aangemeld worden.' ) ),
                 ) )
                 // ->add_fields( 'text', 'Tekst', array(
                 //     Field::make( 'separator', 'separator1', __( 'Text section' ) ),
