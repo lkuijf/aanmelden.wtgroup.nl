@@ -4,6 +4,16 @@
             'image' => $section->image[0],
             'title' => $section->title,
             'text' => $section->text,
+            'show_full_name' => $section->show_full_name,
+            'show_first_name' => $section->show_first_name,
+            'show_last_name' => $section->show_last_name,
+            'show_birth_date' => $section->show_birth_date,
+            'show_company' => $section->show_company,
+            'show_diet_wishes' => $section->show_diet_wishes,
+            'show_partner' => $section->show_partner,
+            'show_partner_name' => $section->show_partner_name,
+            'show_children_amount' => $section->show_children_amount,
+            'show_children_ages' => $section->show_children_ages,
             ])
     @endif
     {{-- @if ($section->_type == '_anchor')
