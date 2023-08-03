@@ -78,7 +78,6 @@ form .dietRadioGroup > div {
 }
 @media (max-width: 480px) {
   form .dietRadioGroup textarea {
-    width: 95%;
     margin-right: 20px;
   }
 }
