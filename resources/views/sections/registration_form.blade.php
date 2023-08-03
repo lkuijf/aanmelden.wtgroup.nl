@@ -43,7 +43,7 @@
                     <option value="6"@if(old('children_amount') && old('children_amount') == 6){{ ' selected' }}@endif>6</option>
                 </select>
             </div>@endif
-            @if($show_children_ages)<div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="15" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>@endif
+            @if($show_children_ages)<div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="20" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>@endif
 
             @if($show_diet_wishes)<div class="dieetWensen">
                 <label>Dieetwensen</label>
