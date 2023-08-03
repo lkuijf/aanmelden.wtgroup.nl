@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Http\Helpers\ApiCall;
 use App\Http\Helpers\WebsiteOptionsApi;
 use App\Models\Registration;
+
 
 class SubmitController extends Controller
 {
@@ -92,6 +94,9 @@ class SubmitController extends Controller
         $valuesToStore['email'] = $request->get('email');
 
         $valuesToStore['page_slug_at_registration'] = $request->get('original_submit_page');
+
+        $wpPost = DB::table('bytbfp_wp_posts')->where('post_name', $request->get('original_submit_page'))->first();
+dd($wpPost);
         
 
         // $toValidate = array(
