@@ -26,7 +26,7 @@ class SubmitController extends Controller
             'full_name' => '', 
             'first_name' => '', 
             'last_name' => '', 
-            'birth_date' => '', 
+            'birth_date' => null, 
             'company' => '', 
             'email' => '', 
             'partner'=> 0,
