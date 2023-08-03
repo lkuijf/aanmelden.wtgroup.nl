@@ -4,14 +4,146 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
-
 use App\Http\Helpers\ApiCall;
 use App\Http\Helpers\WebsiteOptionsApi;
-use Illuminate\Support\Facades\Crypt;
+use App\Models\Registration;
 
 class SubmitController extends Controller
 {
+
+
+
+    public function submitRegistrationForm(Request $request) {
+// dd($request);
+        // 'prohibited' validation rule does not work!!!'
+        if($request->get('valkuil') || $request->get('valstrik')) return abort(404);
+
+        $valuesToStore = array(
+            'full_name' => '', 
+            'first_name' => '', 
+            'last_name' => '', 
+            'birth_date' => '', 
+            'company' => '', 
+            'email' => '', 
+            'partner'=> 0,
+            'partner_name'=> '',
+            'children_amount'=> 0,
+            'children_ages'=> '',
+        );
+
+        $toValidate = array();
+        $validationMessages = array();
+        if($request->has('full_name')) {
+            $toValidate['full_name'] = 'required';
+            $validationMessages['full_name.required'] = 'Vul je volledige naam in';
+            $valuesToStore['full_name'] = $request->get('full_name');
+        }
+        if($request->has('first_name')) {
+            $toValidate['first_name'] = 'required';
+            $validationMessages['first_name.required'] = 'Vul je voornaam in';
+            $valuesToStore['first_name'] = $request->get('first_name');
+        }
+        if($request->has('last_name')) {
+            $toValidate['last_name'] = 'required';
+            $validationMessages['last_name.required'] = 'Vul je achternaam in';
+            $valuesToStore['last_name'] = $request->get('last_name');
+        }
+        if($request->has('birth_date')) {
+            $toValidate['birth_date'] = 'required|date_format:d-m-Y,j-n-Y';
+            $validationMessages['birth_date.required'] = 'Vul je geboortedatum in';
+            $validationMessages['birth_date.date_format'] = 'Vul een datum in (b.v. 23-11-1991)';
+            $valuesToStore['birth_date'] = $request->get('birth_date');
+        }
+        if($request->has('company')) {
+            $toValidate['company'] = 'required';
+            $validationMessages['company.required'] = 'Vul een bedrijfsnaam in';
+            $valuesToStore['company'] = $request->get('company');
+        }
+        
+        $toValidate['email'] = 'required|email';
+        $validationMessages['email.required'] = 'Vul een e-mail adres in';
+        $validationMessages['email.email'] = 'Het e-mail adres is niet goed geformuleerd';
+        $valuesToStore['email'] = $request->get('email');
+        
+
+        // $toValidate = array(
+        //     'full_name' => 'required',
+        //     'first_name' => 'required',
+        //     'last_name' => 'required',
+        //     // 'E-mail_adres' => 'required|email',
+        //     // 'Bericht' => 'required',
+        //     // 'Accept_conditions' => 'required',
+        // );
+        // $validationMessages = array(
+        //     'full_name.required'=> 'Vul je volledige naam in',
+        //     'first_name.required'=> 'Vul je voornaam in',
+        //     'last_name.required'=> 'Vul je achternaam in',
+        //     // 'E-mail_adres.required'=> 'Please provide an e-mail address',
+        //     // 'E-mail_adres.email'=> 'The e-mail address is not correctly formed',
+        //     // 'Bericht.required'=> 'Please fill in a message',
+        //     // 'Accept_conditions.required'=> 'Please read and accept the general conditions',
+        // );
+        /***********************************************************************************
+            redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
+            alleen redirect('/contact') gebruiken (bijvoorbeeld)
+                OF bij dynamische paginas een post maken naar de huidige url: url()->current()
+                    OF een hidden field gebruiken om de pagina mee te geven vanwaar de request kwam
+                        OF op de server de referrer-policy aanpassen van de vhost, naar bijvoorbeeld no-referrer-when-downgrade
+        ************************************************************************************/
+        // $validated = $request->validate($toValidate,$validationMessages);
+        $validator = Validator::make($request->all(), $toValidate, $validationMessages);
+        if($validator->fails()) {
+            // return redirect('/contact')->withErrors($validator)->withInput();
+            return redirect(url($request->get('original_submit_page')))->withErrors($validator)->withInput();
+            // return redirect()->back()->withErrors($validator)->withInput();
+            // return back()->withErrors($validator)->withInput();
+        }
+
+        // $allWebsiteOptions = new WebsiteOptionsApi();
+        // $websiteOptions = $allWebsiteOptions->get();
+        // $to_email = $websiteOptions->email_address;
+        
+        // $to_email = 'leon@wtmedia-events.nl';
+        // // $to_email = 'frans@tamatta.org, rense@tamatta.org';
+        // $subjectCompany = 'Registratie vanaf aanmelden.wtgroup.nl';
+        // $subjectVisitor = 'Kopie van je bericht aan aanmelden.wtgroup.nl';
+        
+        // $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Thanks for your message. We received the following information:');
+
+        // $headers = array(
+        //     "MIME-Version: 1.0",
+        //     "Content-Type: text/html; charset=ISO-8859-1",
+        //     "From: Glomar Offshore <contactform@glomaroffshore.com>",
+        //     "Reply-To: info@glomaroffshore.com",
+        //     // "X-Priority: 1",
+        // );
+        // $headers = implode("\r\n", $headers);
+        // mail($to_email, $subjectCompany, $messages[0], $headers);
+        // // mail($request->get('E-mail_adres'), $subjectVisitor, $messages[1], $headers);
+
+
+        $registration = new Registration;
+        $registration->full_name = $valuesToStore['full_name'];
+        $registration->first_name = $valuesToStore['first_name'];
+        $registration->last_name = $valuesToStore['last_name'];
+        $registration->birth_date = $valuesToStore['birth_date'];
+        $registration->company = $valuesToStore['company'];
+        $registration->email = $valuesToStore['email'];
+        $registration->partner = $valuesToStore['partner'];
+        $registration->partner_name = $valuesToStore['partner_name'];
+        $registration->children_amount = $valuesToStore['children_amount'];
+        $registration->children_ages = $valuesToStore['children_ages'];
+        $registration->save();
+
+
+        return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
+        // return redirect('/contact')->with('success', 'contact');
+    }
+
+
+
     public function submitContactForm(Request $request) {
 
         // 'prohibited' validation rule does not work!!!'

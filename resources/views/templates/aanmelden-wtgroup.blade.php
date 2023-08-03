@@ -16,7 +16,8 @@
             <div><p class="thumbsUpIcon"></p></div>
             {{-- @if(session('success') == 'contact')<div><p>{{ $data['website_options']->form_success }}</p></div>@endif --}}
             @if(session('success') == 'subscription')
-                <div><p>{{ $data['website_options']->form_subscription_success }}</p></div>
+                {{-- <div><p>{{ $data['website_options']->form_subscription_success }}</p></div> --}}
+                <div><p>Gelukt</p></div>
             @else
                 <div><p>{{ session('success') }}</p></div>
             @endif
@@ -26,8 +27,8 @@
     @if($errors->any())
         <div class="alert alert-danger">
             <div><p class="exclamationTriangleIcon"></p></div>
-            <div><p>{{ $data['website_options']->form_error }}</p></div>
-            {{-- <div><p>MISlukt</p></div> --}}
+            {{-- <div><p>{{ $data['website_options']->form_error }}</p></div> --}}
+            <div><p>Mislukt</p></div>
         </div>
     @endif
     <header>

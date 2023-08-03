@@ -29,7 +29,9 @@ Route::get('/', function () {
 
 // Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
+Route::post('/submit-registration-form', [SubmitController::class, 'submitRegistrationForm'])->name('submitRegistrationForm');
 
+/* When no matches, check for a (nested) page request */
 Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
     'section' => '[a-z0-9_-]+',
 ]);
