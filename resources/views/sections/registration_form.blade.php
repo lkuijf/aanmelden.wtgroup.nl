@@ -11,7 +11,7 @@
     <h1>{{ $title }}</h1>
     {!! $text !!}
     @if($close_form)
-        <h2>Aanmelden gesloten!</h2>
+        <h2>Registratie gesloten!</h2>
         <p>Je kan niet meer aanmelden voor dit evenement.</p>
     @else
     <form action="{{ route('submitRegistrationForm') }}" method="post">
