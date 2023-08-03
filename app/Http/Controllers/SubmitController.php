@@ -177,7 +177,7 @@ class SubmitController extends Controller
         //check if not already exists
         $existingRecord = DB::table('registrations')->where('page_id', $wpPost->ID)->where('email', $valuesToStore['email'])->first();
         if($existingRecord) {
-            die('exists!');
+            return redirect(url($request->get('original_submit_page')))->with('error', 'Het gekozen e-mail adres is al aangemeld')->withInput();
         }
 
         $registration = new Registration;

@@ -31,6 +31,12 @@
             <div><p>Aanmelden is helaas mislukt, check het formulier op fouten.</p></div>
         </div>
     @endif
+    @if(session('error'))
+        <div class="alert alert-danger">
+            <div><p class="exclamationTriangleIcon"></p></div>
+            <div><p>{{ session('error') }}</p></div>
+        </div>
+    @endif
     <header>
         <img src="{{ asset('statics/wt-group-logo.png') }}" alt="W.T. Group B.V.">
         <span class="triangle-top-left"></span>
