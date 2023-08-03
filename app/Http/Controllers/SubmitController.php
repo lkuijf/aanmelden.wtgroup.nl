@@ -96,8 +96,8 @@ class SubmitController extends Controller
         $valuesToStore['page_slug_at_registration'] = $request->get('original_submit_page');
 
         $wpPost = DB::table('bytbfp_wp_posts')->where('post_name', $request->get('original_submit_page'))->first();
-dd($wpPost);
-        
+        if(!$wpPost) die('Geen WordPress Post gevonden voor slug: "' . $request->get('original_submit_page') . '"');
+        $valuesToStore['page_id'] = $wpPost->ID;
 
         // $toValidate = array(
         //     'full_name' => 'required',
