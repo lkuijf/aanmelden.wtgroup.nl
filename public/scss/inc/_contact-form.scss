@@ -98,6 +98,11 @@ form {
             gap: 5px;
             align-items: flex-start;
         }
+        textarea {
+            @media (max-width: $sbp4_mobile) {
+                width: 100%;
+            }
+        }
     }
 }
 form {
