@@ -31,6 +31,9 @@ class SubmitController extends Controller
             'partner_name'=> '',
             'children_amount'=> 0,
             'children_ages'=> '',
+            'diet_wishes'=> '',
+            'page_id'=> null,
+            'page_slug_at_registration'=> '',
         );
 
         $toValidate = array();
@@ -66,6 +69,8 @@ class SubmitController extends Controller
         $validationMessages['email.required'] = 'Vul een e-mail adres in';
         $validationMessages['email.email'] = 'Het e-mail adres is niet goed geformuleerd';
         $valuesToStore['email'] = $request->get('email');
+
+        $valuesToStore['page_slug_at_registration'] = $request->get('original_submit_page');
         
 
         // $toValidate = array(
@@ -135,6 +140,9 @@ class SubmitController extends Controller
         $registration->partner_name = $valuesToStore['partner_name'];
         $registration->children_amount = $valuesToStore['children_amount'];
         $registration->children_ages = $valuesToStore['children_ages'];
+        $registration->diet_wishes = $valuesToStore['diet_wishes'];
+        $registration->page_id = $valuesToStore['page_id'];
+        $registration->page_slug_at_registration = $valuesToStore['page_slug_at_registration'];
         $registration->save();
 
 
