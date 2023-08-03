@@ -148,8 +148,8 @@ class SubmitController extends Controller
         $registration->save();
 
 
-        return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
-        // return redirect('/contact')->with('success', 'contact');
+        // return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
+        return redirect(url($request->get('original_submit_page')))->with('success', 'Bedankt voor je aanmelding!');
     }
 
 
