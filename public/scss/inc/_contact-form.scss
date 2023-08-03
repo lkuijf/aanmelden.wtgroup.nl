@@ -24,7 +24,7 @@ form {
         // width: 50%;
         // margin-left: auto;
         // margin-right: auto;
-        div {
+        > div {
             // flex: 45%;
             // @media (max-width: $sbp3_tablet) {
                 // flex: 100%;
@@ -33,6 +33,9 @@ form {
             display: flex;
             gap: 10px;
             align-items: center;
+            &.dieetWensen {
+                align-items: flex-start;
+            }
             // justify-content: space-between;
             label {
                 // flex-basis: 200px;
@@ -50,7 +53,7 @@ form {
         // &:not([type=checkbox]) {
         //     width: 100%;
         // }
-        &[type=checkbox] {
+        &[type=checkbox],&[type=radio] {
             transform: scale(1.5);
             margin-right: 10px;
             cursor: pointer;
@@ -62,8 +65,8 @@ form {
     button {
         cursor: pointer;
         padding: 10px 40px;
-        background-color: #FFF;
-        color: $colorBlack;
+        background-color: $colorWTGroup;
+        color: #FFF;
         font-weight: bold;
         // border: 1px solid $colorOrange;
         -webkit-box-shadow: 1px 1px 0px 0px #AAA, 2px 2px 0px 0px #AAA;
@@ -72,6 +75,16 @@ form {
             -webkit-box-shadow: none;
             box-shadow: none;
             transform: translate(2px, 2px);
+        }
+    }
+    .dietRadioGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        > div {
+            display: flex;
+            gap: 5px;
+            align-items: flex-start;
         }
     }
 }

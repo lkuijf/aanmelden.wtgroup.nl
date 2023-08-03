@@ -38,6 +38,20 @@
             </div>
             <div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="20" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>
 
+            <div class="dieetWensen">
+                <label>Dieetwensen</label>
+                {{-- <input type="text" id="form-diet_wishes" name="diet_wishes" size="20" value="{{ old('diet_wishes') }}" placeholder="Heb je dieetwensen?"> --}}
+                <div class="dietRadioGroup">
+                    <div><input type="radio" id="form-diet_nvt" name="diet_wishes" value="n.v.t." @if((old('diet_wishes') && old('diet_wishes') == 'n.v.t.') || !old('diet_wishes')){{ 'checked ' }}@endif/><label for="form-diet_nvt">Niet van toepassing</label></div>
+                    <div><input type="radio" id="form-diet_vegetarisch" name="diet_wishes" value="Vegetarisch" @if(old('diet_wishes') && old('diet_wishes') == 'Vegetarisch'){{ 'checked ' }}@endif/><label for="form-diet_vegetarisch">Vegetarisch</label></div>
+                    <div><input type="radio" id="form-diet_halal" name="diet_wishes" value="Halal" @if(old('diet_wishes') && old('diet_wishes') == 'Halal'){{ 'checked ' }}@endif/><label for="form-diet_halal">Halal</label></div>
+                    <div><input type="radio" id="form-diet_anders" name="diet_wishes" value="Anders" @if(old('diet_wishes') && old('diet_wishes') == 'Anders'){{ 'checked ' }}@endif/></label>
+                        {{-- <input type="text" name="diet_anders" size="35" value="{{ old('diet_anders') }}" placeholder="Anders"> --}}
+                        <div @error('diet_anders')class="error" data-err-msg="{{ $message }}"@enderror><textarea name="diet_anders" cols="35" rows="3" placeholder="Anders">{{ old('diet_anders') }}</textarea></div>
+                    </div>
+                </div>
+            </div>
+
 
             {{-- <div><label for="form-phone">Phone number</label><input type="text" id="form-phone" name="Telefoon" value="{{ old('Telefoon') }}"></div>
             <div @error('E-mail_adres')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-email">E-mail Address *</label><input type="text" id="form-email" name="E-mail_adres" value="{{ old('E-mail_adres') }}"></div>

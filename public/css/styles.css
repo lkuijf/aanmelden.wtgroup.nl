@@ -4,12 +4,15 @@ form div.fieldlist {
   margin-top: 20px;
   gap: 20px;
 }
-form div.fieldlist div {
+form div.fieldlist > div {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-form div.fieldlist div label {
+form div.fieldlist > div.dieetWensen {
+  align-items: flex-start;
+}
+form div.fieldlist > div label {
   flex: 0 0 200px;
 }
 form input, form textarea, form button, form select {
@@ -20,7 +23,7 @@ form input, form textarea, form button, form select {
 form input, form textarea, form select {
   border: 1px solid #666;
 }
-form input[type=checkbox], form textarea[type=checkbox], form select[type=checkbox] {
+form input[type=checkbox], form input[type=radio], form textarea[type=checkbox], form textarea[type=radio], form select[type=checkbox], form select[type=radio] {
   transform: scale(1.5);
   margin-right: 10px;
   cursor: pointer;
@@ -34,14 +37,24 @@ form input::placeholder, form textarea::placeholder, form select::placeholder {
 form button {
   cursor: pointer;
   padding: 10px 40px;
-  background-color: #FFF;
-  color: #222;
+  background-color: #006878;
+  color: #FFF;
   font-weight: bold;
   box-shadow: 1px 1px 0px 0px #AAA, 2px 2px 0px 0px #AAA;
 }
 form button:active {
   box-shadow: none;
   transform: translate(2px, 2px);
+}
+form .dietRadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form .dietRadioGroup > div {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
 }
 
 form input.snare, form textarea.snare {

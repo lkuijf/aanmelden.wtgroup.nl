@@ -1,4 +1,6 @@
 const toTopBtn = document.querySelector('#toTop');
+const dietTextarea = document.querySelector('textarea[name=diet_anders]');
+const dietAndersRadio = document.querySelector('input#form-diet_anders');
 
 /***** To Top Button *************************/
 toTopBtn.addEventListener('click', (e) => {
@@ -29,3 +31,10 @@ function debounce(func){
     };
 }
 /*********************************************/
+/***** Check corresponding radio button when texarea is focused ******/
+if(dietTextarea) {
+    dietTextarea.addEventListener('focus', () => {
+        dietAndersRadio.checked = true;
+    });
+}
+/*********************************************************************/

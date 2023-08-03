@@ -86,6 +86,21 @@ class SubmitController extends Controller
             $validationMessages['children_ages.max'] = 'Maximaal 200 karakters toegestaan';
             $valuesToStore['children_ages'] = $request->get('children_ages');
         }
+
+        
+        if($request->has('diet_wishes')) {
+            $valuesToStore['diet_wishes'] = $request->get('diet_wishes');
+        }
+
+        if($request->has('diet_wishes') && $request->has('diet_anders')) {
+            if($request->get('diet_wishes') == 'Anders') {
+                $toValidate['diet_anders'] = 'max:200';
+                $validationMessages['diet_anders.max'] = 'Maximaal 200 karakters toegestaan';
+                $valuesToStore['diet_wishes'] = $request->get('diet_anders');
+            } else {
+                $valuesToStore['diet_wishes'] = $request->get('diet_wishes');
+            }
+        }
         
         $toValidate['email'] = 'required|email|max:200';
         $validationMessages['email.required'] = 'Vul een e-mail adres in';
@@ -94,10 +109,6 @@ class SubmitController extends Controller
         $valuesToStore['email'] = $request->get('email');
 
         $valuesToStore['page_slug_at_registration'] = $request->get('original_submit_page');
-
-        $wpPost = DB::table('bytbfp_wp_posts')->where('post_name', $request->get('original_submit_page'))->first();
-        if(!$wpPost) die('Geen WordPress Post gevonden voor slug: "' . $request->get('original_submit_page') . '"');
-        $valuesToStore['page_id'] = $wpPost->ID;
 
         // $toValidate = array(
         //     'full_name' => 'required',
@@ -153,6 +164,10 @@ class SubmitController extends Controller
         // $headers = implode("\r\n", $headers);
         // mail($to_email, $subjectCompany, $messages[0], $headers);
         // // mail($request->get('E-mail_adres'), $subjectVisitor, $messages[1], $headers);
+
+        $wpPost = DB::table('bytbfp_wp_posts')->where('post_name', $request->get('original_submit_page'))->first();
+        if(!$wpPost) die('Geen WordPress Post gevonden voor slug: "' . $request->get('original_submit_page') . '"');
+        $valuesToStore['page_id'] = $wpPost->ID;
 
         $birthDateParts = explode('-', $valuesToStore['birth_date']);
         $valuesToStore['birth_date'] = implode('-', array_reverse($birthDateParts));
