@@ -21,22 +21,22 @@
             <div @error('company')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-company">Bedrijfsnaam *</label><input type="text" id="form-company" name="company" size="25" value="{{ old('company') }}" placeholder="Bij welk bedrijf werk je?"></div>
             <div>
                 <label for="form-partner">Inclusief partner?</label>
-                <input type="checkbox" id="form-partner" name="partner" value="1"><span>Ja</span>
+                <input type="checkbox" id="form-partner" name="partner" value="1"@if(old('partner') && old('partner') == 1){{ ' checked' }}@endif><span>Ja</span>
             </div>
-            <div><label for="form-partner_name">Naam partner</label><input type="text" id="form-partner_name" name="partner_name" value="{{ old('partner_name') }}" placeholder="Naam van je partner"></div>
+            <div @error('partner_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-partner_name">Naam partner</label><input type="text" id="form-partner_name" name="partner_name" size="25" value="{{ old('partner_name') }}" placeholder="Naam van je partner"></div>
             <div>
                 <label for="form-children_amount">Aantal kinderen</label>
                 <select name="children_amount" id="form-children_amount">
                     <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
+                    <option value="1"@if(old('children_amount') && old('children_amount') == 1){{ ' selected' }}@endif>1</option>
+                    <option value="2"@if(old('children_amount') && old('children_amount') == 2){{ ' selected' }}@endif>2</option>
+                    <option value="3"@if(old('children_amount') && old('children_amount') == 3){{ ' selected' }}@endif>3</option>
+                    <option value="4"@if(old('children_amount') && old('children_amount') == 4){{ ' selected' }}@endif>4</option>
+                    <option value="5"@if(old('children_amount') && old('children_amount') == 5){{ ' selected' }}@endif>5</option>
+                    <option value="6"@if(old('children_amount') && old('children_amount') == 6){{ ' selected' }}@endif>6</option>
                 </select>
             </div>
-            <div><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>
+            <div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="20" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>
 
 
             {{-- <div><label for="form-phone">Phone number</label><input type="text" id="form-phone" name="Telefoon" value="{{ old('Telefoon') }}"></div>
