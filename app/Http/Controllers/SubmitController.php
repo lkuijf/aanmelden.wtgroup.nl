@@ -174,6 +174,12 @@ class SubmitController extends Controller
             $valuesToStore['birth_date'] = implode('-', array_reverse($birthDateParts));
         }
 
+        //check if not already exists
+        $existingRecord = DB::table('registrations')->where('page_id', $wpPost->ID)->where('email', $valuesToStore['email'])->first();
+        if($existingRecord) {
+            die('exists!');
+        }
+
         $registration = new Registration;
         $registration->full_name = $valuesToStore['full_name'];
         $registration->first_name = $valuesToStore['first_name'];
