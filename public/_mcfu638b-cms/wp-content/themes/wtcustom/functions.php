@@ -81,7 +81,7 @@ function custom_registration_page() {
     add_menu_page(
         'Overzicht aanmeldingen',
         'Aanmeldingen',
-        'manage_options',
+        'publish_pages',
         'custom-registration-page',
         'renderRegistrationPage'
     );
