@@ -92,6 +92,17 @@ form .error span {
   gap: 20px;
   align-items: center;
 }
+.alert .thumbsUpIcon:before {
+  font-family: "aanmelden_wtgroup";
+  font-size: 60px;
+  content: "\e801";
+}
+.alert .exclamationTriangleIcon:before {
+  font-family: "aanmelden_wtgroup";
+  font-size: 60px;
+  content: "\e803";
+}
+
 #toTop {
   display: flex;
   align-items: center;
@@ -109,8 +120,8 @@ form .error span {
   transition: bottom 0.3s ease;
 }
 #toTop:before {
-  font-family: "wt_media_events";
-  font-size: 40px;
+  font-family: "aanmelden_wtgroup";
+  font-size: 30px;
   color: #FFF;
   content: "\e800";
 }
@@ -142,6 +153,14 @@ img {
   vertical-align: middle;
 }
 
+@font-face {
+  font-family: "aanmelden_wtgroup";
+  src: url("../fontello/font/aanmelden_wtgroup.eot");
+  src: url("../fontello/font/aanmelden_wtgroup.eot#iefix") format("embedded-opentype"), url("../fontello/font/aanmelden_wtgroup.woff2") format("woff2"), url("../fontello/font/aanmelden_wtgroup.woff") format("woff"), url("../fontello/font/aanmelden_wtgroup.ttf") format("truetype"), url("../fontello/font/aanmelden_wtgroup.svg#aanmelden_wtgroup") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 header {
   border-bottom: 1px solid #CCC;
 }

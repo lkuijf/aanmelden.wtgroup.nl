@@ -28,7 +28,7 @@
         <div class="alert alert-danger">
             <div><p class="exclamationTriangleIcon"></p></div>
             {{-- <div><p>{{ $data['website_options']->form_error }}</p></div> --}}
-            <div><p>Mislukt</p></div>
+            <div><p>Aanmelden is helaas mislukt, check het formulier op fouten.</p></div>
         </div>
     @endif
     <header>

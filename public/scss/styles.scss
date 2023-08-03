@@ -44,6 +44,20 @@ img {
     vertical-align: middle; // removes bottom 3px margin.
 }
 
+@font-face {
+    font-family: 'aanmelden_wtgroup';
+    src: url('../fontello/font/aanmelden_wtgroup.eot');
+    src: url('../fontello/font/aanmelden_wtgroup.eot#iefix') format('embedded-opentype'),
+         url('../fontello/font/aanmelden_wtgroup.woff2') format('woff2'),
+         url('../fontello/font/aanmelden_wtgroup.woff') format('woff'),
+         url('../fontello/font/aanmelden_wtgroup.ttf') format('truetype'),
+         url('../fontello/font/aanmelden_wtgroup.svg#aanmelden_wtgroup') format('svg');
+    font-weight: normal;                    
+    font-style: normal;
+    font-display: swap;
+}
+
+
 header {
     border-bottom: 1px solid #CCC;
     .triangle-top-left {

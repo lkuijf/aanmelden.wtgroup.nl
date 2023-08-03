@@ -129,17 +129,17 @@ form {
         align-items: center;
     }
     .thumbsUpIcon {
-        // &:before {
-        //     font-family: "glomaroffshore";
-        //     font-size: 60px;
-        //     content: '\e809';
-        // }
+        &:before {
+            font-family: "aanmelden_wtgroup";
+            font-size: 60px;
+            content: '\e801';
+        }
     }
     .exclamationTriangleIcon {
-        // &:before {
-        //     font-family: "glomaroffshore";
-        //     font-size: 60px;
-        //     content: '\e80e';
-        // }
+        &:before {
+            font-family: "aanmelden_wtgroup";
+            font-size: 60px;
+            content: '\e803';
+        }
     }
 }
