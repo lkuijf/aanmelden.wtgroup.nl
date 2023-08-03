@@ -3,25 +3,28 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 40px;
+    right: 10px;
     bottom: -80px; // height + shadow
     z-index: 102;
     cursor: default;
     background-color: $colorWTGroup;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     text-decoration: none;
     box-shadow: 0px 0px 10px #FFF;
     transition: bottom 0.3s ease;
     &:before {
         font-family: "aanmelden_wtgroup";
-        font-size: 30px;
+        font-size: 25px;
         color: #FFF;
         content: '\e800';
+        position: absolute;
+        left: 13px;
+        top: 8px;
     }
     &.show {
-        bottom: 40px;
+        bottom: 10px;
     }
     &:hover:before {
         // color: $colorBlack;
