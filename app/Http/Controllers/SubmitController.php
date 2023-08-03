@@ -26,7 +26,7 @@ class SubmitController extends Controller
             'full_name' => '', 
             'first_name' => '', 
             'last_name' => '', 
-            'birth_date' => '1-1-1980', 
+            'birth_date' => null, 
             'company' => '', 
             'email' => '', 
             'partner'=> 0,
@@ -169,9 +169,11 @@ class SubmitController extends Controller
         if(!$wpPost) die('Geen WordPress Post gevonden voor slug: "' . $request->get('original_submit_page') . '"');
         $valuesToStore['page_id'] = $wpPost->ID;
 
-        $birthDateParts = explode('-', $valuesToStore['birth_date']);
-        $valuesToStore['birth_date'] = implode('-', array_reverse($birthDateParts));
-// dd($valuesToStore);
+        if($valuesToStore['birth_date'] !== null) {
+            $birthDateParts = explode('-', $valuesToStore['birth_date']);
+            $valuesToStore['birth_date'] = implode('-', array_reverse($birthDateParts));
+        }
+
         $registration = new Registration;
         $registration->full_name = $valuesToStore['full_name'];
         $registration->first_name = $valuesToStore['first_name'];
