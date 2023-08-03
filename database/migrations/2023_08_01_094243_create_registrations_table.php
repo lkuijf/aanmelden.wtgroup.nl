@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('full_name')->default('');
             $table->string('first_name')->default('');
             $table->string('last_name')->default('');
-            $table->date('birth_date')->default('');
+            $table->date('birth_date')->default('01-01-1980');
             $table->string('email')->default('');
             $table->string('company')->default('');
             $table->text('diet_wishes')->default('');
