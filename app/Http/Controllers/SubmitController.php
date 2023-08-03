@@ -70,8 +70,8 @@ class SubmitController extends Controller
             $validationMessages['company.max'] = 'Maximaal 200 karakters toegestaan';
             $valuesToStore['company'] = $request->get('company');
         }
-        if($request->has('parnter')) {
-            $valuesToStore['parnter'] = $request->get('parnter');
+        if($request->has('partner')) {
+            $valuesToStore['partner'] = $request->get('partner');
         }
         if($request->has('partner_name')) {
             $toValidate['partner_name'] = 'max:200';
