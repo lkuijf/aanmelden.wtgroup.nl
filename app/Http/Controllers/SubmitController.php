@@ -39,18 +39,21 @@ class SubmitController extends Controller
         $toValidate = array();
         $validationMessages = array();
         if($request->has('full_name')) {
-            $toValidate['full_name'] = 'required';
+            $toValidate['full_name'] = 'required|max:200';
             $validationMessages['full_name.required'] = 'Vul je volledige naam in';
+            $validationMessages['full_name.max'] = 'Maximaal 200 karakters toegestaan';
             $valuesToStore['full_name'] = $request->get('full_name');
         }
         if($request->has('first_name')) {
-            $toValidate['first_name'] = 'required';
+            $toValidate['first_name'] = 'required|max:200';
             $validationMessages['first_name.required'] = 'Vul je voornaam in';
+            $validationMessages['first_name.max'] = 'Maximaal 200 karakters toegestaan';
             $valuesToStore['first_name'] = $request->get('first_name');
         }
         if($request->has('last_name')) {
-            $toValidate['last_name'] = 'required';
+            $toValidate['last_name'] = 'required|max:200';
             $validationMessages['last_name.required'] = 'Vul je achternaam in';
+            $validationMessages['last_name.max'] = 'Maximaal 200 karakters toegestaan';
             $valuesToStore['last_name'] = $request->get('last_name');
         }
         if($request->has('birth_date')) {
@@ -60,14 +63,32 @@ class SubmitController extends Controller
             $valuesToStore['birth_date'] = $request->get('birth_date');
         }
         if($request->has('company')) {
-            $toValidate['company'] = 'required';
+            $toValidate['company'] = 'required|max:200';
             $validationMessages['company.required'] = 'Vul een bedrijfsnaam in';
+            $validationMessages['company.max'] = 'Maximaal 200 karakters toegestaan';
             $valuesToStore['company'] = $request->get('company');
         }
+        if($request->has('parnter')) {
+            $valuesToStore['parnter'] = $request->get('parnter');
+        }
+        if($request->has('partner_name')) {
+            $toValidate['partner_name'] = 'max:200';
+            $validationMessages['partner_name.max'] = 'Maximaal 200 karakters toegestaan';
+            $valuesToStore['partner_name'] = $request->get('partner_name');
+        }
+        if($request->has('children_amount')) {
+            $valuesToStore['children_amount'] = $request->get('children_amount');
+        }
+        if($request->has('children_ages')) {
+            $toValidate['children_ages'] = 'max:200';
+            $validationMessages['children_ages.max'] = 'Maximaal 200 karakters toegestaan';
+            $valuesToStore['children_ages'] = $request->get('children_ages');
+        }
         
-        $toValidate['email'] = 'required|email';
+        $toValidate['email'] = 'required|email|max:200';
         $validationMessages['email.required'] = 'Vul een e-mail adres in';
         $validationMessages['email.email'] = 'Het e-mail adres is niet goed geformuleerd';
+        $validationMessages['email.max'] = 'Maximaal 200 karakters toegestaan';
         $valuesToStore['email'] = $request->get('email');
 
         $valuesToStore['page_slug_at_registration'] = $request->get('original_submit_page');
