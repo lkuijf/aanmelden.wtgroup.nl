@@ -171,7 +171,7 @@ class SubmitController extends Controller
 
         $birthDateParts = explode('-', $valuesToStore['birth_date']);
         $valuesToStore['birth_date'] = implode('-', array_reverse($birthDateParts));
-
+// dd($valuesToStore);
         $registration = new Registration;
         $registration->full_name = $valuesToStore['full_name'];
         $registration->first_name = $valuesToStore['first_name'];

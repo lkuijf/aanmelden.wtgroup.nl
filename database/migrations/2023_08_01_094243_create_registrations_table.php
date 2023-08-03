@@ -15,19 +15,19 @@ return new class extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name')->default('');
-            $table->string('first_name')->default('');
-            $table->string('last_name')->default('');
-            $table->date('birth_date')->default('1980-01-01');
-            $table->string('email')->default('');
-            $table->string('company')->default('');
-            $table->text('diet_wishes')->default('');
-            $table->boolean('partner')->default(0);
-            $table->string('partner_name')->default('');
-            $table->integer('children_amount')->default(0);
-            $table->string('children_ages')->default('');
+            $table->string('full_name')->nullable()->default('');
+            $table->string('first_name')->nullable()->default('');
+            $table->string('last_name')->nullable()->default('');
+            $table->date('birth_date')->nullable()->default('1980-01-01');
+            $table->string('email')->nullable()->default('');
+            $table->string('company')->nullable()->default('');
+            $table->text('diet_wishes')->nullable()->default('');
+            $table->boolean('partner')->nullable()->default(0);
+            $table->string('partner_name')->nullable()->default('');
+            $table->integer('children_amount')->nullable()->default(0);
+            $table->string('children_ages')->nullable()->default('');
             $table->integer('page_id')->nullable()->default(null);
-            $table->string('page_slug_at_registration')->default('');
+            $table->string('page_slug_at_registration')->nullable()->default('');
             $table->timestamps();
         });
     }
