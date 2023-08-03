@@ -159,7 +159,7 @@ function renderRegistrationPage() {
                         <td style="font-size:11px"><?php echo $row['email']; ?></td>
                         <td style="font-size:11px"><?php echo $row['company']; ?></td>
                         <td style="font-size:11px"><?php echo $row['diet_wishes']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['partner']; ?></td>
+                        <td style="font-size:11px"><?php echo ($row['partner']?'Ja':'Nee') ?></td>
                         <td style="font-size:11px"><?php echo $row['partner_name']; ?></td>
                         <td style="font-size:11px"><?php echo $row['children_amount']; ?></td>
                         <td style="font-size:11px"><?php echo $row['children_ages']; ?></td>
