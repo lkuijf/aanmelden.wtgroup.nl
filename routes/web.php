@@ -35,7 +35,7 @@ Route::get('/clear-response-cache-wt', function () {
 
 // Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
-Route::post('/submit-registration-form', [SubmitController::class, 'submitRegistrationForm'])->name('submitRegistrationForm');
+Route::post('/submit-registration-form', [SubmitController::class, 'submitRegistrationForm'])->name('submitRegistrationForm')->middleware('doNotCacheResponse');
 
 /* When no matches, check for a (nested) page request */
 Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
