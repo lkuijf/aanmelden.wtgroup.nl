@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SubmitController;
 use App\Http\Controllers\ImageController;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,10 @@ Route::get('/', function () {
     // return view('welcome');
     echo 'Nothing here';
 })->name('home');
+Route::get('/clear-response-cache-wt', function () {
+    ResponseCache::clear();
+    echo 'Response Cache Cleared!';
+})->middleware('doNotCacheResponse');
 
 // Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 

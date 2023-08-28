@@ -457,6 +457,8 @@ if (!current_user_can('administrator')) {
     add_filter('screen_options_show_screen', 'remove_screen_options');
 }
 
+add_action('wp_before_admin_bar_render', 'add_admin_bar_menus' );
+
 add_action('admin_enqueue_scripts', 'wt_admin_style');
 function wt_admin_style() {
     wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/css/wt.css' );
@@ -466,6 +468,9 @@ add_action('admin_footer', 'customBackendScripts');
 
 add_action('add_meta_boxes', 'set_default_page_template', 1);
 add_action('carbon_fields_register_fields', function() use ( $carbonFieldsArgs ) { crbRegisterFields( $carbonFieldsArgs ); });
+
+// 28-8-2023. Leon Kuijf. Removed api-endpoint caching. Using Laravel Response Cache instead.
+/*
 add_action('carbon_fields_theme_options_container_saved', 'deleteWebsiteOptionsRestCache');
 
 add_action('add_attachment', 'deleteSimpleMediaRestCache');
@@ -481,6 +486,8 @@ add_action('save_post_blog', 'deleteSimpleCustomPostsRestCacheBlog');
 add_action('save_post_case', 'deleteSimpleCustomPostsRestCacheCase');
 add_action('save_post_review', 'deleteSimpleCustomPostsRestCacheReview');
 add_action('save_post_teammember', 'deleteSimpleCustomPostsRestCacheTeammember');
+*/
+
 
 // add_action('save_post_page', 'deleteAllPostRestCache');
 // add_action('save_post_blog', 'deleteAllPostRestCache');
