@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Helpers;
-//test2
+
 class Menu {
     public $allPagesFlattenedPerParent;
     public $html;
