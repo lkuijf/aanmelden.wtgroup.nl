@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('registrations', function (Blueprint $table) {
-            $table->boolean('partner')->nullable()->default(0)->before('full_name');
+            $table->boolean('participate')->nullable()->default(0)->before('full_name');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('registrations', function (Blueprint $table) {
-            //
+            $table->dropColumn('participate');
         });
     }
 };
