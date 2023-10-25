@@ -4,6 +4,7 @@
             'image' => $section->image[0],
             'title' => $section->title,
             'text' => $section->text,
+            'show_participate' => $section->show_participate,
             'show_full_name' => $section->show_full_name,
             'show_first_name' => $section->show_first_name,
             'show_last_name' => $section->show_last_name,

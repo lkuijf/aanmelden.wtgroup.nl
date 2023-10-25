@@ -539,6 +539,7 @@ function crbRegisterFields($args) {
                     Field::make( 'text', 'title', __( 'Title' ) ),
                     Field::make( 'rich_text', 'text', __( 'Text' ) ),
                     Field::make( 'separator', 'separator2', __( 'Formulier opties' ) ),
+                    Field::make( 'checkbox', 'show_participate', __( 'Show Participate y/n checkbox' ) ),
                     Field::make( 'checkbox', 'show_full_name', __( 'Show Full name field' ) ),
                     Field::make( 'checkbox', 'show_first_name', __( 'Show First name field' ) ),
                     Field::make( 'checkbox', 'show_last_name', __( 'Show Last name field' ) ),

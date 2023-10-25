@@ -17,6 +17,13 @@
     <form action="{{ route('submitRegistrationForm') }}" method="post">
         @csrf
         <div class="fieldlist">
+            @if($show_participate)<div>
+                <label for="form-participate">Ik ben aanwezig</label>
+                <div>
+                    <div><input type="radio" id="form-participate-yes" name="participate" value="Ja" @if((old('participate') && old('participate') == 'Ja') || !old('participate')){{ 'checked ' }}@endif/><label for="form-participate-yes">Ja</label></div>
+                    <div><input type="radio" id="form-participate-no" name="participate" value="Nee" @if(old('participate') && old('participate') == 'Nee'){{ 'checked ' }}@endif/><label for="form-participate-no">Nee</label></div>
+                </div>
+            </div>@endif
             @if($show_full_name)<div @error('full_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-full_name">Volledige naam *</label><input type="text" id="form-full_name" name="full_name" size="20" value="{{ old('full_name') }}" placeholder="Je volledige naam"></div>@endif
             @if($show_first_name)<div @error('first_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-first_name">Voornaam *</label><input type="text" id="form-first_name" name="first_name" size="12" value="{{ old('first_name') }}" placeholder="Je voornaam"></div>@endif
             @if($show_last_name)<div @error('last_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-last_name">Achternaam *</label><input type="text" id="form-last_name" name="last_name" size="12" value="{{ old('last_name') }}" placeholder="Je achternaam"></div>@endif
