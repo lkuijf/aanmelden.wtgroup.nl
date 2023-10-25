@@ -81,6 +81,10 @@ form .dietRadioGroup > div {
     width: 90%;
   }
 }
+form .participateRadioGroup {
+  display: flex;
+  gap: 10px;
+}
 
 form input.snare, form textarea.snare {
   display: none;

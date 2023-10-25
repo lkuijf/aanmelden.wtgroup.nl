@@ -23,6 +23,7 @@ class SubmitController extends Controller
         if($request->get('valkuil') || $request->get('valstrik')) return abort(404);
 
         $valuesToStore = array(
+            'participate' => '', 
             'full_name' => '', 
             'first_name' => '', 
             'last_name' => '', 
@@ -40,6 +41,9 @@ class SubmitController extends Controller
 
         $toValidate = array();
         $validationMessages = array();
+        if($request->has('participate')) {
+            $valuesToStore['participate'] = $request->get('participate');
+        }
         if($request->has('full_name')) {
             $toValidate['full_name'] = 'required|max:200';
             $validationMessages['full_name.required'] = 'Vul je volledige naam in';
@@ -181,6 +185,7 @@ class SubmitController extends Controller
         }
 
         $registration = new Registration;
+        $registration->participate = $valuesToStore['participate'];
         $registration->full_name = $valuesToStore['full_name'];
         $registration->first_name = $valuesToStore['first_name'];
         $registration->last_name = $valuesToStore['last_name'];

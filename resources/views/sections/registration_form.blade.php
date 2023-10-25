@@ -19,9 +19,9 @@
         <div class="fieldlist">
             @if($show_participate)<div>
                 <label for="form-participate">Ik ben aanwezig</label>
-                <div>
-                    <div><input type="radio" id="form-participate-yes" name="participate" value="Ja" @if((old('participate') && old('participate') == 'Ja') || !old('participate')){{ 'checked ' }}@endif/><label for="form-participate-yes">Ja</label></div>
-                    <div><input type="radio" id="form-participate-no" name="participate" value="Nee" @if(old('participate') && old('participate') == 'Nee'){{ 'checked ' }}@endif/><label for="form-participate-no">Nee</label></div>
+                <div class="participateRadioGroup">
+                    <div><input type="radio" id="form-participate-yes" name="participate" value="1" @if((old('participate') !== null && old('participate') == '1') || !old('participate')){{ 'checked ' }}@endif/><label for="form-participate-yes">Ja</label></div>
+                    <div><input type="radio" id="form-participate-no" name="participate" value="0" @if(old('participate') !== null && old('participate') == '0'){{ 'checked ' }}@endif/><label for="form-participate-no">Nee</label></div>
                 </div>
             </div>@endif
             @if($show_full_name)<div @error('full_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-full_name">Volledige naam *</label><input type="text" id="form-full_name" name="full_name" size="20" value="{{ old('full_name') }}" placeholder="Je volledige naam"></div>@endif

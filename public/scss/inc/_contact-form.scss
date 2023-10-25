@@ -105,6 +105,10 @@ form {
             }
         }
     }
+    .participateRadioGroup {
+        display: flex;
+        gap: 10px;
+    }
 }
 form {
     input, textarea {
