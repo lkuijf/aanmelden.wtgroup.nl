@@ -131,6 +131,7 @@ function renderRegistrationPage() {
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
+                    <th style="font-size:11px">Aanwezig</th>
                     <th style="font-size:11px">Volledige Naam</th>
                     <th style="font-size:11px">Voornaam</th>
                     <th style="font-size:11px">Achternaam</th>
@@ -152,6 +153,7 @@ function renderRegistrationPage() {
                         $page_title = get_the_title($row['page_id']);
                     ?>
                     <tr>
+                        <td style="font-size:11px"><?php echo ($row['participate']?'Ja':'Nee'); ?></td>
                         <td style="font-size:11px"><?php echo $row['full_name']; ?></td>
                         <td style="font-size:11px"><?php echo $row['first_name']; ?></td>
                         <td style="font-size:11px"><?php echo $row['last_name']; ?></td>
