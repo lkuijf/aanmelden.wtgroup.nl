@@ -126,7 +126,6 @@ function renderRegistrationPage() {
         </form>
         <?php
             if($selectedRegistrationPageId) {
-                //test2
             ?>
             <p>
                 Totaal aantal aanmeldingen: <strong><?php echo count($results) ?></strong><br>
@@ -178,7 +177,7 @@ function renderRegistrationPage() {
             </table>
             <?php
             } else {
-                echo '<p><em>Selecteer eerst een event</em></p>';
+                echo '<p><em>Selecteer en filter op een event voor resultaten.</em></p>';
             }
         ?>
     </div>
