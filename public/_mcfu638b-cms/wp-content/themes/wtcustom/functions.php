@@ -95,12 +95,18 @@ function renderRegistrationPage() {
     $totalPartners = 0;
     $totalChildren = 0;
     $pages = get_pages();
+var_dump($pages);
+die();
     $results = [];
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
         $selectedRegistrationPageId = trim($_GET['reg_page_id']);
         $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $selectedRegistrationPageId", ARRAY_A);
 
         if(isset($_GET['export']) && trim($_GET['export']) == 'yes') {
+            foreach($pages as $page) {
+                if($selectedRegistrationPageId == $page->ID) $pageSlug = 'xxxxx';
+            }
+            $fileName = 
             file_put_contents('../wp-content/aanmeldingen-exports/test.csv', 'even kijken hoor');
         }
 
