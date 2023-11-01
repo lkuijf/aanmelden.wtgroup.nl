@@ -95,8 +95,8 @@ function renderRegistrationPage() {
     $totalPartners = 0;
     $totalChildren = 0;
     $pages = get_pages();
-var_dump($pages);
-die();
+// var_dump($pages);
+// die();
     $results = [];
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
         $selectedRegistrationPageId = trim($_GET['reg_page_id']);
@@ -104,10 +104,10 @@ die();
 
         if(isset($_GET['export']) && trim($_GET['export']) == 'yes') {
             foreach($pages as $page) {
-                if($selectedRegistrationPageId == $page->ID) $pageSlug = 'xxxxx';
+                if($selectedRegistrationPageId == $page->ID) $pageSlug = $page->post_name;
             }
-            $fileName = 
-            file_put_contents('../wp-content/aanmeldingen-exports/test.csv', 'even kijken hoor');
+            $fileName = 'aanmeldingen_' . $pageSlug . '.csv';
+            file_put_contents('../wp-content/aanmeldingen-exports/' . $fileName, 'even kijken hoor');
         }
 
     }
