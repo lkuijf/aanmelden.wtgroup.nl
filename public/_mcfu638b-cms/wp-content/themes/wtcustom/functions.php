@@ -133,7 +133,6 @@ function renderRegistrationPage() {
                 $page_title = get_the_title($row['page_id']);
                 if($row['participate']) $row['participate'] = 'Ja'; else $row['participate'] = 'Nee';
                 if($row['partner']) $row['partner'] = 'Ja'; else $row['partner'] = 'Nee';
-                if($row['partner']) $row['partner'] = 'Ja'; else $row['partner'] = 'Nee';
                 if($page_title) $row['page_title'] = $page_title; else $row['page_title'] = '- geen pagina gevonden, page_slug_at_registration: ' . $row['page_slug_at_registration'] . ' -';
 
                 $csvData[] = array(
