@@ -251,7 +251,7 @@ function renderRegistrationPage() {
             </table>
             <?php
             } else {
-                echo '<p><em>Selecteer een pagina en zoek naar resultaten.</em></p>';
+                echo '<p><em>Selecteer een pagina.</em></p>';
             }
         ?>
     </div>
