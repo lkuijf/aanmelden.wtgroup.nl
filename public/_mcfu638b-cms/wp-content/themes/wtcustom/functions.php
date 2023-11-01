@@ -99,8 +99,11 @@ function renderRegistrationPage() {
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
         $selectedRegistrationPageId = trim($_GET['reg_page_id']);
         $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $selectedRegistrationPageId", ARRAY_A);
-    } else {
-        // $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+
+        if(isset($_GET['export']) && trim($_GET['export']) == 'yes') {
+            file_put_contents('../wp-content/aanmeldingen-exports/test.csv', 'even kijken hoor');
+        }
+
     }
     foreach($results as $res) { // this is not the way, but ok..
         $totalPartners += $res['partner'];
@@ -135,7 +138,12 @@ function renderRegistrationPage() {
             </p>
             <h3>Exporteren</h3>
             <p>Exporteer onderstaande lijst naar een csv-bestand (te bewerken met MS Excel)</p>
-            <button>Exporteer</button>
+            <form action="admin.php" method="GET">
+                <input type="hidden" name="page" value="custom-registration-page">
+                <input type="hidden" name="reg_page_id" value="<?php echo $selectedRegistrationPageId ?>">
+                <input type="hidden" name="export" value="yes">
+                <button type="submit">Exporteer</button>
+            </form>
             <h3>Aanmeldingen</h3>
             <table class="wp-list-table widefat fixed striped">
                 <thead>
