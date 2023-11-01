@@ -126,6 +126,7 @@ function renderRegistrationPage() {
         </form>
         <?php
             if($selectedRegistrationPageId) {
+                //test
             ?>
             <p>
                 Totaal aantal aanmeldingen: <strong><?php echo count($results) ?></strong><br>
