@@ -171,7 +171,7 @@ function renderRegistrationPage() {
         <p>Een overzicht van alle aanmeldingen.</p>
         <form action="admin.php" method="GET" style="display:inline-block;border:1px solid #CCC;padding:10px;">
             <input type="hidden" name="page" value="custom-registration-page">
-            <select name="reg_page_id" id="">
+            <select name="reg_page_id" id="" onchange="this.form.submit()">
                 <option value="">- Selecteer een pagina -</option>
                 <?php
                     foreach($pages as $page) {
@@ -181,7 +181,7 @@ function renderRegistrationPage() {
                     }
                 ?>
             </select>
-            <button type="submit">Zoeken</button>
+            <!-- <button type="submit">Zoeken</button> -->
         </form>
         <?php
             if($selectedRegistrationPageId) {
