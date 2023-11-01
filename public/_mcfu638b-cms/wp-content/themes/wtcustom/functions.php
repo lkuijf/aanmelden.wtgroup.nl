@@ -95,9 +95,8 @@ function renderRegistrationPage() {
     $totalPartners = 0;
     $totalChildren = 0;
     $pages = get_pages();
-// var_dump($pages);
-// die();
     $results = [];
+    $file = '';
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
         $selectedRegistrationPageId = trim($_GET['reg_page_id']);
         $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $selectedRegistrationPageId", ARRAY_A);
@@ -200,6 +199,11 @@ function renderRegistrationPage() {
                 <input type="hidden" name="reg_page_id" value="<?php echo $selectedRegistrationPageId ?>">
                 <input type="hidden" name="export" value="yes">
                 <button type="submit">Exporteer</button>
+                <?php
+                    if($file) {
+                        echo '&nbsp;Bestand is beschikbaar. <a href="' . $file . '" target="_blank">Downloaden</a>';
+                    }
+                ?>
             </form>
             <h3>Aanmeldingen</h3>
             <table class="wp-list-table widefat fixed striped">
