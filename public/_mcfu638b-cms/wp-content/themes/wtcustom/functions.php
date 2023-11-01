@@ -155,7 +155,7 @@ function renderRegistrationPage() {
             }
 
             foreach($csvData as $row) {
-                fputcsv($handle, $row);
+                fputcsv($handle, $row, ';');
             }
             
             fclose($handle);
