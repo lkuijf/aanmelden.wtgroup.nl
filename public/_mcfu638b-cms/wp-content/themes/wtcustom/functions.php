@@ -107,7 +107,59 @@ function renderRegistrationPage() {
                 if($selectedRegistrationPageId == $page->ID) $pageSlug = $page->post_name;
             }
             $fileName = 'aanmeldingen_' . $pageSlug . '.csv';
-            file_put_contents('../wp-content/aanmeldingen-exports/' . $fileName, 'even kijken hoor');
+            $file = '../wp-content/aanmeldingen-exports/' . $fileName;
+
+            $handle = fopen($file, 'w');
+
+            $csvData = array(
+                array(
+                    'Aanwezig', 
+                    'Volledige Naam', 
+                    'Voornaam',
+                    'Achternaam',
+                    'Geboortedatum',
+                    'E-mail',
+                    'Bedrijfsnaam',
+                    'Dieetwensen',
+                    'Partner?',
+                    'Naam partner',
+                    'Aantal kinderen',
+                    'Leeftijd kinderen',
+                    'Aangemeld voor',
+                    'Tijdstip aanmelding (UTC)',
+                    )
+            );
+            foreach($results as $row) {
+                $page_title = get_the_title($row['page_id']);
+                if($row['participate']) $row['participate'] = 'Ja'; else $row['participate'] = 'Nee';
+                if($row['partner']) $row['partner'] = 'Ja'; else $row['partner'] = 'Nee';
+                if($row['partner']) $row['partner'] = 'Ja'; else $row['partner'] = 'Nee';
+                if($page_title) $row['page_title'] = $page_title; else $row['page_title'] = '- geen pagina gevonden, page_slug_at_registration: ' . $row['page_slug_at_registration'] . ' -';
+
+                $csvData[] = array(
+                    $row['participate'],
+                    $row['full_name'],
+                    $row['first_name'],
+                    $row['last_name'],
+                    $row['birth_date'],
+                    $row['email'],
+                    $row['company'],
+                    $row['diet_wishes'],
+                    $row['partner'],
+                    $row['partner_name'],
+                    $row['children_amount'],
+                    $row['children_ages'],
+                    $row['page_title'],
+                    $row['created_at'],
+                );
+            }
+
+            foreach($csvData as $row) {
+                fputcsv($handle, $row);
+            }
+            
+            fclose($handle);
+            // file_put_contents($file, 'even kijken hoor');
         }
 
     }
