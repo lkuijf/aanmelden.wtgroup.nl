@@ -127,11 +127,16 @@ function renderRegistrationPage() {
         <?php
             if($selectedRegistrationPageId) {
             ?>
+            <h3>Totalen</h3>
             <p>
                 Totaal aantal aanmeldingen: <strong><?php echo count($results) ?></strong><br>
                 Totaal aantal partners: <strong><?php echo $totalPartners ?></strong><br>
                 Totaal aantal kinderen: <strong><?php echo $totalChildren ?></strong>
             </p>
+            <h3>Exporteren</h3>
+            <p>Exporteer onderstaande lijst naar een csv-bestand (te bewerken met MS Excel)</p>
+            <button>Exporteer</button>
+            <h3>Aanmeldingen</h3>
             <table class="wp-list-table widefat fixed striped">
                 <thead>
                     <tr>
