@@ -124,54 +124,62 @@ function renderRegistrationPage() {
             </select>
             <button type="submit">Filteren</button>
         </form>
-        <p>
-            Totaal aantal aanmeldingen: <strong><?php echo count($results) ?></strong><br>
-            Totaal aantal partners: <strong><?php echo $totalPartners ?></strong><br>
-            Totaal aantal kinderen: <strong><?php echo $totalChildren ?></strong>
-        </p>
-        <table class="wp-list-table widefat fixed striped">
-            <thead>
-                <tr>
-                    <th style="font-size:11px">Aanwezig</th>
-                    <th style="font-size:11px">Volledige Naam</th>
-                    <th style="font-size:11px">Voornaam</th>
-                    <th style="font-size:11px">Achternaam</th>
-                    <th style="font-size:11px">Geboortedatum</th>
-                    <th style="font-size:11px">E-mail</th>
-                    <th style="font-size:11px">Bedrijfsnaam</th>
-                    <th style="font-size:11px">Dieetwensen</th>
-                    <th style="font-size:11px">Partner?</th>
-                    <th style="font-size:11px">Naam partner</th>
-                    <th style="font-size:11px">Aantal kinderen</th>
-                    <th style="font-size:11px">Leeftijd kinderen</th>
-                    <th style="font-size:11px">Aangemeld voor</th>
-                    <th style="font-size:11px">Tijdstip aanmelding (UTC)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($results as $row) : ?>
-                    <?php
-                        $page_title = get_the_title($row['page_id']);
-                    ?>
+        <?php
+            if($selectedRegistrationPageId) {
+            ?>
+            <p>
+                Totaal aantal aanmeldingen: <strong><?php echo count($results) ?></strong><br>
+                Totaal aantal partners: <strong><?php echo $totalPartners ?></strong><br>
+                Totaal aantal kinderen: <strong><?php echo $totalChildren ?></strong>
+            </p>
+            <table class="wp-list-table widefat fixed striped">
+                <thead>
                     <tr>
-                        <td style="font-size:11px"><?php echo ($row['participate']?'Ja':'Nee'); ?></td>
-                        <td style="font-size:11px"><?php echo $row['full_name']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['first_name']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['last_name']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['birth_date']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['email']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['company']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['diet_wishes']; ?></td>
-                        <td style="font-size:11px"><?php echo ($row['partner']?'Ja':'Nee') ?></td>
-                        <td style="font-size:11px"><?php echo $row['partner_name']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['children_amount']; ?></td>
-                        <td style="font-size:11px"><?php echo $row['children_ages']; ?></td>
-                        <td style="font-size:11px"><?php echo ($page_title?$page_title:'- geen pagina gevonden, page_slug_at_registration: ' . $row['page_slug_at_registration'] . ' -'); ?></td>
-                        <td style="font-size:11px"><?php echo $row['created_at']; ?></td>
+                        <th style="font-size:11px">Aanwezig</th>
+                        <th style="font-size:11px">Volledige Naam</th>
+                        <th style="font-size:11px">Voornaam</th>
+                        <th style="font-size:11px">Achternaam</th>
+                        <th style="font-size:11px">Geboortedatum</th>
+                        <th style="font-size:11px">E-mail</th>
+                        <th style="font-size:11px">Bedrijfsnaam</th>
+                        <th style="font-size:11px">Dieetwensen</th>
+                        <th style="font-size:11px">Partner?</th>
+                        <th style="font-size:11px">Naam partner</th>
+                        <th style="font-size:11px">Aantal kinderen</th>
+                        <th style="font-size:11px">Leeftijd kinderen</th>
+                        <th style="font-size:11px">Aangemeld voor</th>
+                        <th style="font-size:11px">Tijdstip aanmelding (UTC)</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($results as $row) : ?>
+                        <?php
+                            $page_title = get_the_title($row['page_id']);
+                        ?>
+                        <tr>
+                            <td style="font-size:11px"><?php echo ($row['participate']?'Ja':'Nee'); ?></td>
+                            <td style="font-size:11px"><?php echo $row['full_name']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['first_name']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['last_name']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['birth_date']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['email']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['company']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['diet_wishes']; ?></td>
+                            <td style="font-size:11px"><?php echo ($row['partner']?'Ja':'Nee') ?></td>
+                            <td style="font-size:11px"><?php echo $row['partner_name']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['children_amount']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['children_ages']; ?></td>
+                            <td style="font-size:11px"><?php echo ($page_title?$page_title:'- geen pagina gevonden, page_slug_at_registration: ' . $row['page_slug_at_registration'] . ' -'); ?></td>
+                            <td style="font-size:11px"><?php echo $row['created_at']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php
+            } else {
+                echo '<p><em>Selecteer eerst een event</em></p>';
+            }
+        ?>
     </div>
     <?php
 }
