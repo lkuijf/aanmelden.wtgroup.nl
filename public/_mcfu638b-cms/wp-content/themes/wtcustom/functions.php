@@ -95,11 +95,12 @@ function renderRegistrationPage() {
     $totalPartners = 0;
     $totalChildren = 0;
     $pages = get_pages();
+    $results = [];
     if(isset($_GET['reg_page_id']) && trim($_GET['reg_page_id']) != '') {
         $selectedRegistrationPageId = trim($_GET['reg_page_id']);
         $results = $wpdb->get_results("SELECT * FROM $table_name WHERE page_id = $selectedRegistrationPageId", ARRAY_A);
     } else {
-        $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+        // $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
     }
     foreach($results as $res) { // this is not the way, but ok..
         $totalPartners += $res['partner'];
