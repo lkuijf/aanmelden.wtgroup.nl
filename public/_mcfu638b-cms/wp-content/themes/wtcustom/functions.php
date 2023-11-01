@@ -122,7 +122,7 @@ function renderRegistrationPage() {
                     }
                 ?>
             </select>
-            <button type="submit">Filteren</button>
+            <button type="submit">Zoeken</button>
         </form>
         <?php
             if($selectedRegistrationPageId) {
@@ -177,7 +177,7 @@ function renderRegistrationPage() {
             </table>
             <?php
             } else {
-                echo '<p><em>Selecteer en filter op een event voor resultaten.</em></p>';
+                echo '<p><em>Selecteer een pagina en zoek naar resultaten.</em></p>';
             }
         ?>
     </div>
