@@ -77,7 +77,7 @@
         <div class="fieldlist">
             <div>
                 <label>&nbsp;</label>
-                <button type="submit">Aanmelden</button>
+                <button type="submit">Verzenden</button>
             </div>
         </div>
     </form>
