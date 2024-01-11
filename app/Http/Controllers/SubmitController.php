@@ -35,6 +35,7 @@ class SubmitController extends Controller
             'children_amount'=> 0,
             'children_ages'=> '',
             'diet_wishes'=> '',
+            'diet_anders'=> '',
             'page_id'=> null,
             'page_slug_at_registration'=> '',
         );
@@ -96,14 +97,25 @@ class SubmitController extends Controller
             $valuesToStore['diet_wishes'] = $request->get('diet_wishes');
         }
 
-        if($request->has('diet_wishes') && $request->has('diet_anders')) {
-            if($request->get('diet_wishes') == 'Anders') {
+        // if($request->has('diet_wishes') && $request->has('diet_anders')) {
+        //     if($request->get('diet_wishes') == 'Anders') {
+        //         $toValidate['diet_anders'] = 'max:200';
+        //         $validationMessages['diet_anders.max'] = 'Maximaal 200 karakters toegestaan';
+        //         $valuesToStore['diet_wishes'] = $request->get('diet_anders');
+        //     } else {
+        //         $valuesToStore['diet_wishes'] = $request->get('diet_wishes');
+        //     }
+        // }
+        
+        if($request->has('diet_anders')) {
+            // if($request->get('diet_wishes') == 'Anders') {
                 $toValidate['diet_anders'] = 'max:200';
                 $validationMessages['diet_anders.max'] = 'Maximaal 200 karakters toegestaan';
-                $valuesToStore['diet_wishes'] = $request->get('diet_anders');
-            } else {
-                $valuesToStore['diet_wishes'] = $request->get('diet_wishes');
-            }
+                $valuesToStore['diet_anders'] = $request->get('diet_anders');
+                // $valuesToStore['diet_wishes'] = $request->get('diet_anders');
+            // } else {
+            //     $valuesToStore['diet_wishes'] = $request->get('diet_wishes');
+            // }
         }
         
         $toValidate['email'] = 'required|email|max:200';
@@ -197,6 +209,7 @@ class SubmitController extends Controller
         $registration->children_amount = $valuesToStore['children_amount'];
         $registration->children_ages = $valuesToStore['children_ages'];
         $registration->diet_wishes = $valuesToStore['diet_wishes'];
+        $registration->diet_anders = $valuesToStore['diet_anders'];
         $registration->page_id = $valuesToStore['page_id'];
         $registration->page_slug_at_registration = $valuesToStore['page_slug_at_registration'];
         $registration->save();

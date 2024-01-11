@@ -62,9 +62,10 @@
                     <div><input type="radio" id="form-diet_vegetarisch" name="diet_wishes" value="Vegetarisch" @if(old('diet_wishes') && old('diet_wishes') == 'Vegetarisch'){{ 'checked ' }}@endif/><label for="form-diet_vegetarisch">Vegetarisch</label></div>
                     <div><input type="radio" id="form-diet_halal" name="diet_wishes" value="Halal" @if(old('diet_wishes') && old('diet_wishes') == 'Halal'){{ 'checked ' }}@endif/><label for="form-diet_halal">Halal</label></div>
                     <div>
+                        <p>Dieetwensen?</p>
                         {{-- <input type="radio" id="form-diet_anders" name="diet_wishes" value="Anders" @if(old('diet_wishes') && old('diet_wishes') == 'Anders'){{ 'checked ' }}@endif/> --}}
                         <div @error('diet_anders')class="error" data-err-msg="{{ $message }}"@enderror>
-                            <textarea name="diet_anders" cols="30" rows="3" placeholder="Anders">{{ old('diet_anders') }}</textarea>
+                            <textarea name="diet_anders" cols="30" rows="3" placeholder="Dieetwensen">{{ old('diet_anders') }}</textarea>
                         </div>
                     </div>
                 </div>
