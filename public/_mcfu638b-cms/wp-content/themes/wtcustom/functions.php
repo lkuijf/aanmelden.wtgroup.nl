@@ -218,6 +218,7 @@ function renderRegistrationPage() {
                         <th style="font-size:11px">Geboortedatum</th>
                         <th style="font-size:11px">E-mail</th>
                         <th style="font-size:11px">Bedrijfsnaam</th>
+                        <th style="font-size:11px">Menu voorkeur</th>
                         <th style="font-size:11px">Dieetwensen</th>
                         <th style="font-size:11px">Partner?</th>
                         <th style="font-size:11px">Naam partner</th>
@@ -241,6 +242,7 @@ function renderRegistrationPage() {
                             <td style="font-size:11px"><?php echo $row['email']; ?></td>
                             <td style="font-size:11px"><?php echo $row['company']; ?></td>
                             <td style="font-size:11px"><?php echo $row['diet_wishes']; ?></td>
+                            <td style="font-size:11px"><?php echo $row['diet_anders']; ?></td>
                             <td style="font-size:11px"><?php echo ($row['partner']?'Ja':'Nee') ?></td>
                             <td style="font-size:11px"><?php echo $row['partner_name']; ?></td>
                             <td style="font-size:11px"><?php echo $row['children_amount']; ?></td>
