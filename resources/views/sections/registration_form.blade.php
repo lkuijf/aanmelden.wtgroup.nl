@@ -21,7 +21,7 @@
                 <label for="form-participate">Ik ben aanwezig</label>
                 <div class="participateRadioGroup">
                     <div><input type="radio" id="form-participate-yes" name="participate" value="1" @if((old('participate') !== null && old('participate') == '1') || !old('participate')){{ 'checked ' }}@endif/><label for="form-participate-yes">Ja</label></div>
-                    <div><input type="radio" id="form-participate-no" name="participate" value="0" @if(old('participate') !== null && old('participate') == '0'){{ 'checked ' }}@endif/><label for="form-participate-no">Nee</label></div>
+                    <div><input type="radio" id="form-participate-no" name="participate" value="0" @if(old('participate') !== null && old('participate') == '0'){{ 'checked ' }}@endif/><label for="form-participate-no">Nee (alleen indien je je afgemeld hebt bij je leidingevende)</label></div>
                 </div>
             </div>@endif
             @if($show_full_name)<div @error('full_name')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-full_name">Volledige naam *</label><input type="text" id="form-full_name" name="full_name" size="20" value="{{ old('full_name') }}" placeholder="Je volledige naam"></div>@endif
@@ -53,7 +53,7 @@
             @if($show_children_ages)<div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="20" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>@endif
 
             @if($show_diet_wishes)<div class="dieetWensen">
-                <label>Dieetwensen</label>
+                <label>Menu voorkeur</label>
                 {{-- <input type="text" id="form-diet_wishes" name="diet_wishes" size="20" value="{{ old('diet_wishes') }}" placeholder="Heb je dieetwensen?"> --}}
                 <div class="dietRadioGroup">
                     {{-- <div><input type="radio" id="form-diet_nvt" name="diet_wishes" value="n.v.t." @if((old('diet_wishes') && old('diet_wishes') == 'n.v.t.') || !old('diet_wishes')){{ 'checked ' }}@endif/><label for="form-diet_nvt">Niet van toepassing</label></div> --}}
@@ -61,7 +61,7 @@
                     <div><input type="radio" id="form-diet_vis" name="diet_wishes" value="Vis" @if(old('diet_wishes') && old('diet_wishes') == 'Vis'){{ 'checked ' }}@endif/><label for="form-diet_vis">Vis</label></div>
                     <div><input type="radio" id="form-diet_vegetarisch" name="diet_wishes" value="Vegetarisch" @if(old('diet_wishes') && old('diet_wishes') == 'Vegetarisch'){{ 'checked ' }}@endif/><label for="form-diet_vegetarisch">Vegetarisch</label></div>
                     <div><input type="radio" id="form-diet_halal" name="diet_wishes" value="Halal" @if(old('diet_wishes') && old('diet_wishes') == 'Halal'){{ 'checked ' }}@endif/><label for="form-diet_halal">Halal</label></div>
-                    <div><input type="radio" id="form-diet_anders" name="diet_wishes" value="Anders" @if(old('diet_wishes') && old('diet_wishes') == 'Anders'){{ 'checked ' }}@endif/></label>
+                    {{-- <div><input type="radio" id="form-diet_anders" name="diet_wishes" value="Anders" @if(old('diet_wishes') && old('diet_wishes') == 'Anders'){{ 'checked ' }}@endif/></label> --}}
                         {{-- <input type="text" name="diet_anders" size="35" value="{{ old('diet_anders') }}" placeholder="Anders"> --}}
                         <div @error('diet_anders')class="error" data-err-msg="{{ $message }}"@enderror><textarea name="diet_anders" cols="30" rows="3" placeholder="Anders">{{ old('diet_anders') }}</textarea></div>
                     </div>
