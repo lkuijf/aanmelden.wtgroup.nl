@@ -58,7 +58,7 @@
                 <div class="dietRadioGroup">
                     {{-- <div><input type="radio" id="form-diet_nvt" name="diet_wishes" value="n.v.t." @if((old('diet_wishes') && old('diet_wishes') == 'n.v.t.') || !old('diet_wishes')){{ 'checked ' }}@endif/><label for="form-diet_nvt">Niet van toepassing</label></div> --}}
                     <div><input type="radio" id="form-diet_vlees" name="diet_wishes" value="Vlees" @if((old('diet_wishes') && old('diet_wishes') == 'Vlees') || !old('diet_wishes')){{ 'checked ' }}@endif/><label for="form-diet_vlees">Vlees</label></div>
-                    <div><input type="radio" id="form-diet_vis" name="diet_wishes" value="Vis" @if((old('diet_wishes') && old('diet_wishes') == 'Vis') || !old('diet_wishes')){{ 'checked ' }}@endif/><label for="form-diet_vis">Vis</label></div>
+                    <div><input type="radio" id="form-diet_vis" name="diet_wishes" value="Vis" @if(old('diet_wishes') && old('diet_wishes') == 'Vis'){{ 'checked ' }}@endif/><label for="form-diet_vis">Vis</label></div>
                     <div><input type="radio" id="form-diet_vegetarisch" name="diet_wishes" value="Vegetarisch" @if(old('diet_wishes') && old('diet_wishes') == 'Vegetarisch'){{ 'checked ' }}@endif/><label for="form-diet_vegetarisch">Vegetarisch</label></div>
                     <div><input type="radio" id="form-diet_halal" name="diet_wishes" value="Halal" @if(old('diet_wishes') && old('diet_wishes') == 'Halal'){{ 'checked ' }}@endif/><label for="form-diet_halal">Halal</label></div>
                     <div><input type="radio" id="form-diet_anders" name="diet_wishes" value="Anders" @if(old('diet_wishes') && old('diet_wishes') == 'Anders'){{ 'checked ' }}@endif/></label>
