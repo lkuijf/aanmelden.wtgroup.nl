@@ -52,6 +52,11 @@
             </div>@endif
             @if($show_children_ages)<div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="20" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>@endif
 
+            @php
+                $curPageSlug = basename(parse_url(URL::current(), PHP_URL_PATH));
+                echo $curPageSlug;
+            @endphp
+
             @if($show_diet_wishes)<div class="dieetWensen">
                 <label>Menu voorkeur</label>
                 {{-- <input type="text" id="form-diet_wishes" name="diet_wishes" size="20" value="{{ old('diet_wishes') }}" placeholder="Heb je dieetwensen?"> --}}
