@@ -10,6 +10,7 @@
             'show_last_name' => $section->show_last_name,
             'show_birth_date' => $section->show_birth_date,
             'show_company' => $section->show_company,
+            'show_menu_preferences' => $section->show_menu_preferences,
             'show_diet_wishes' => $section->show_diet_wishes,
             'show_partner' => $section->show_partner,
             'show_partner_name' => $section->show_partner_name,

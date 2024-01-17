@@ -56,7 +56,7 @@
             @if($show_children_ages)<div @error('children_ages')class="error" data-err-msg="{{ $message }}"@enderror><label for="form-children_ages">Leeftijd kinderen</label><input type="text" id="form-children_ages" name="children_ages" size="20" value="{{ old('children_ages') }}" placeholder="Hoe oud zijn je kinderen?"></div>@endif
 
 
-            @if ($curPageSlug == 'wti-inspiratiesessie')
+            {{-- @if ($curPageSlug == 'wti-inspiratiesessie') --}}
                 @if($show_diet_wishes)<div class="dieetWensen">
                     <label>Dieetwensen</label>
                     <div class="dietRadioGroup">
@@ -68,8 +68,8 @@
                         </div>
                     </div>
                 </div>@endif
-            @else
-                @if($show_diet_wishes)<div class="dieetWensen">
+            {{-- @else --}}
+                @if($show_menu_preferences)<div class="dieetWensen">
                     <label>Menu voorkeur</label>
                     <div class="dietRadioGroup">
                         <div><input type="radio" id="form-diet_vlees" name="diet_wishes" value="Vlees" @if((old('diet_wishes') && old('diet_wishes') == 'Vlees') || !old('diet_wishes')){{ 'checked ' }}@endif/><label for="form-diet_vlees">Vlees</label></div>
@@ -83,7 +83,7 @@
                             </div>
                     </div>
                 </div>@endif
-            @endif
+            {{-- @endif --}}
 
 
 
