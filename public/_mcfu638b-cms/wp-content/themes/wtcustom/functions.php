@@ -119,8 +119,8 @@ function renderRegistrationPage() {
                     'Geboortedatum',
                     'E-mail',
                     'Bedrijfsnaam',
-                    'Menu voorkeur',
-                    'Dieetwensen',
+                    'Menu/Dieet',
+                    'Wensen/Anders',
                     'Partner?',
                     'Naam partner',
                     'Aantal kinderen',
@@ -218,8 +218,8 @@ function renderRegistrationPage() {
                         <th style="font-size:11px">Geboortedatum</th>
                         <th style="font-size:11px">E-mail</th>
                         <th style="font-size:11px">Bedrijfsnaam</th>
-                        <th style="font-size:11px">Menu voorkeur</th>
-                        <th style="font-size:11px">Dieetwensen</th>
+                        <th style="font-size:11px">Menu/Dieet</th>
+                        <th style="font-size:11px">Wensen/Anders</th>
                         <th style="font-size:11px">Partner?</th>
                         <th style="font-size:11px">Naam partner</th>
                         <th style="font-size:11px">Aantal kinderen</th>
