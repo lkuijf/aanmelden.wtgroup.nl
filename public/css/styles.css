@@ -220,8 +220,8 @@ header > picture img {
   height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center bottom;
-     object-position: center bottom;
+  -o-object-position: center center;
+     object-position: center center;
   animation: scaleZoom 40s linear infinite;
 }
 

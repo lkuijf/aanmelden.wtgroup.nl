@@ -81,7 +81,8 @@ header {
             width: 100%;
             height: 500px;
             object-fit: cover;
-            object-position: center bottom;
+            // object-position: center bottom;
+            object-position: center center;
             animation: scaleZoom 40s linear infinite;
         }
     }
